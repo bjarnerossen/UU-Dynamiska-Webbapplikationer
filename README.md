@@ -10,7 +10,7 @@ Furthermore, it teaches to apply criteria and tools to evaluate the usability an
 
 **Lab 1** (Uppgift 1) covers `HTML`
 
-**Lab 2 ** (Uppgift 2) covers `CSS`
+**Lab 2** (Uppgift 2) covers `CSS`
 
 **Lab 3** (Uppgift 3) covers `Javascript`
 
