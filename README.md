@@ -10,7 +10,7 @@ Furthermore, it teaches to apply criteria and tools to evaluate the usability an
 
 **Course Outline:**
 
-| Name        | Covers                           |  Week |
+| Name        | Theme                           |  Week |
 | :---------- | :------------------------------- | ----: |
 | **Lab 1**   | `HTML`                           |   3-4 |
 | **Lab 2**   | `CSS`                            |   5-7 |
