@@ -1,62 +1,68 @@
 <!DOCTYPE html>
 <html lang="sv">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../stil/style.css" />
     <title>Café Choco-Latte</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <h1>Café Choco-Latte</h1>
-        <h2>Fantastiskt kaffe & läckra bakverk</h2>
-        <p> vill vara en kaffeoas där du känner de intensiva dofterna från kaffet när du kliver in genom dörren. Vi är en plats där du för varje kopp kaffe och bakverk ska uppleva en sann njutning och smaksensation.  Vi vill ge dig hög kvalitet utan att tumma på rättvisan gentemot kaffe- och kakoodlarna.</p>
-        <nav>
-            <ul>
-                <li><a href="./index.html">Hem</a></li>
-                <li><a href="./chokladprovning.html">Chokladprovning</a></li>
-                    <ul>
-                            <li><a href="bokning.html">Boka chokladprovning</a></li>
-                    </ul>
-                <li><a href="./om_kakaotrad.html">Om Kakaoträdet</a></li>
-            </ul>
-        </nav>
+      <h1>Café Choco-Latte</h1>
+      <h2>Fantastiskt kaffe & läckra bakverk</h2>
+      <p>
+        vill vara en kaffeoas där du känner de intensiva dofterna från kaffet
+        när du kliver in genom dörren. Vi är en plats där du för varje kopp
+        kaffe och bakverk ska uppleva en sann njutning och smaksensation. Vi
+        vill ge dig hög kvalitet utan att tumma på rättvisan gentemot kaffe- och
+        kakoodlarna.
+      </p>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Hem</a></li>
+          <li><a href="./chokladprovning.html">Chokladprovning</a></li>
+          <ul>
+            <li><a href="bokning.html">Boka chokladprovning</a></li>
+          </ul>
+          <li><a href="./om_kakaotrad.html">Om Kakaoträdet</a></li>
+        </ul>
+      </nav>
     </header>
-    <hr>
+    <hr />
     <main>
-<h2>Boka Chokladprovning</h2>
-<form method="POST" action="#">
-    <fieldset>
-        <legend>Välj datum:</legend>
-        <p>
-            <input type="radio" name="datum" value="30_april" id="30_april">
+      <h2>Boka Chokladprovning</h2>
+      <form method="POST" action="#">
+        <fieldset>
+          <legend>Välj datum:</legend>
+          <p>
+            <input type="radio" name="datum" value="30_april" id="30_april" />
             <label for="30_april">30 april</label>
-        </p>
-        <p>
-            <input type="radio" name="datum" value="2_maj" id="2_maj">
+          </p>
+          <p>
+            <input type="radio" name="datum" value="2_maj" id="2_maj" />
             <label for="2_maj">2 maj</label>
-        </p>
-        <p>
-            <input type="radio" name="datum" value="7_maj" id="7_maj">
-            <label for="7_maj">7maj</label>                    
-        </p>
-        <p>
-            <input type="radio" name="datum" value="9_maj" id="9_maj">
-            <label for="9_maj">9 maj</label>                
-        </p>
-        <p>
-            <input type="radio" name="datum" value="14_maj" id="14_maj">
+          </p>
+          <p>
+            <input type="radio" name="datum" value="7_maj" id="7_maj" />
+            <label for="7_maj">7maj</label>
+          </p>
+          <p>
+            <input type="radio" name="datum" value="9_maj" id="9_maj" />
+            <label for="9_maj">9 maj</label>
+          </p>
+          <p>
+            <input type="radio" name="datum" value="14_maj" id="14_maj" />
             <label for="14_maj">14 maj</label>
-        </p>
-        <p>
-            <input type="radio" name="datum" value="16_maj" id="16_maj">
-            <label for="16_maj">16 maj</label>                    
-        </p>
-    </fieldset>
-    <fieldset>
-        <legend>Välj antal personer:</legend>
-        <select name="personer" id="personer">
+          </p>
+          <p>
+            <input type="radio" name="datum" value="16_maj" id="16_maj" />
+            <label for="16_maj">16 maj</label>
+          </p>
+        </fieldset>
+        <fieldset>
+          <legend>Välj antal personer:</legend>
+          <select name="personer" id="personer">
             <option value="one">1</option>
             <option value="two">2</option>
             <option value="three">3</option>
@@ -64,33 +70,33 @@
             <option value="five">5</option>
             <option value="six">6</option>
             <option value="seven">7</option>
-        </select>
-    </fieldset>
-    <fieldset>
-        <legend>Fyll i dina uppgifter</legend>
-        <p>
+          </select>
+        </fieldset>
+        <fieldset>
+          <legend>Fyll i dina uppgifter</legend>
+          <p>
             <label>Namn:</label>
-            <input type="text" name="name">
-        </p>
-        <p>
+            <input type="text" name="name" />
+          </p>
+          <p>
             <label>Email:</label>
-            <input type="email" name="email">                  
-        </p>
-        <p>
+            <input type="email" name="email" />
+          </p>
+          <p>
             <label>Mobilnummer:</label>
-            <input type="tel" name="tel">                  
-        </p>
-        <p>
+            <input type="tel" name="tel" />
+          </p>
+          <p>
             <label>Meddelande:</label>
-            <textarea rows="2" cols="25" name="msg"></textarea>         
-        </p>
-    </fieldset>
-    <input type="submit" value="Boka">
-</form>
+            <textarea rows="2" cols="25" name="msg"></textarea>
+          </p>
+        </fieldset>
+        <input type="submit" value="Boka" />
+      </form>
     </main>
     <footer>
-        <hr>
-        <p>&copy; Copyright 2023 | Café Choco-Latte</p>
+      <hr />
+      <p>&copy; Copyright 2023 | Café Choco-Latte</p>
     </footer>
-</body>
+  </body>
 </html>
