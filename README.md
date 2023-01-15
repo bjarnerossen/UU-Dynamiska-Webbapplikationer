@@ -10,20 +10,10 @@ Furthermore, it teaches to apply criteria and tools to evaluate the usability an
 
 **Course Outline:**
 
-| Name        |                                        Description                                         |  Week |
-| :---------- | :----------------------------------------------------------------------------------------: | ----: |
-| **Lab 1**   |                                       covers `HTML`                                        |   3-4 |
-| **Lab 2**   |                                        covers `CSS`                                        |   5-7 |
-| **Lab 3**   |                                    covers `Javascript`                                     |  8-13 |
-| **Lab 4**   |                         covers `W3 Standards` and `Accessability`                          | 14-15 |
-| **Project** | comprises all obtained knowledge from the previous labs and requires to `Build a Website`. | 16-20 |
-
-**Lab 1** (Uppgift 1) covers `HTML`
-
-**Lab 2** (Uppgift 2) covers `CSS`
-
-**Lab 3** (Uppgift 3) covers `Javascript`
-
-**Lab 4** (Uppgift 4) covers `W3 Standards` and `Accessability`
-
-**Project** (Projekt) comprises all obtained knowledge from the previous labs and requires to `Build a Website`.
+| Name        |              Covers              |  Week |
+| :---------- | :------------------------------: | ----: |
+| **Lab 1**   |              `HTML`              |   3-4 |
+| **Lab 2**   |              `CSS`               |   5-7 |
+| **Lab 3**   |           `Javascript`           |  8-13 |
+| **Lab 4**   | `W3 Standards` & `Accessability` | 14-15 |
+| **Project** |      `Building a Website`.       | 16-20 |
