@@ -10,10 +10,10 @@ Furthermore, it teaches to apply criteria and tools to evaluate the usability an
 
 **Course Outline:**
 
-| Name        |              Covers              |  Week |
-| :---------- | :------------------------------: | ----: |
-| **Lab 1**   |              `HTML`              |   3-4 |
-| **Lab 2**   |              `CSS`               |   5-7 |
-| **Lab 3**   |           `Javascript`           |  8-13 |
+| Name        | Covers                           |  Week |
+| :---------- | :------------------------------- | ----: |
+| **Lab 1**   | `HTML`                           |   3-4 |
+| **Lab 2**   | `CSS`                            |   5-7 |
+| **Lab 3**   | `Javascript`                     |  8-13 |
 | **Lab 4**   | `W3 Standards` & `Accessability` | 14-15 |
-| **Project** |      `Building a Website`.       | 16-20 |
+| **Project** | `Building a Website`.            | 16-20 |
