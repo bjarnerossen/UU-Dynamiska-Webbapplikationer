@@ -1,0 +1,360 @@
+/* CSS Reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+/* Table Design */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+}
+
+th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--main-color);
+}
+
+th {
+    background-color: var(--main-color);
+    color: var(--light-color);
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: var(--light-color);
+}
+
+
+/* Global styles */
+/* Defining variables for the color scheme */
+:root {
+    --main-color: #3d5a80;
+    --light-color: #98c1d9;
+    --lightest-color: #e0fbfc;
+    --dark-color: #293241;
+    --accent-color: #f2b6a8;
+}
+body {
+    /* background-color: var(--light-color);
+    color: var(--accent-color); */
+    font-family: Arial, Helvetica, sans-serif;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(120deg, var(--light-color) 0%, var(--accent-color) 100%);
+    z-index: -1;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: left;
+    color: var(--main-color);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5em;
+    font-weight: 600;
+    text-align: center;
+    color: var(--main-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+
+img {
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(85%);
+    border-radius: 10px;
+    transition: all 0.5s ease;
+}
+
+img:hover {
+    filter: brightness(100%);
+    box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+
+/* Text */
+p {
+    background-color: transparent;
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.2);
+    font-size: 1.2rem;
+    font-family: 'Open Sans', sans-serif;
+    color: var(--lightest-color);
+    line-height: 1.5;
+    margin: 1rem 0;
+    text-align: justify;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+p a {
+    color: var(--main-color);
+    text-decoration: none;
+    border-bottom: 1px solid var(--main-color);
+    padding-bottom: 2px;
+    transition: all 0.3s ease;
+}
+p a:hover {
+    color: var(--light-color);
+    background-color: var(--main-color);
+}
+
+/* Layout */
+#container {
+    max-width: 1200px;
+    margin: 0 auto; /* center the container */
+}
+/* Header */
+header {
+    background-color: var(--main-color);
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+header h1 {
+    margin-bottom: 0;
+    color: var(--light-color);
+    font-size: 3rem;
+    text-transform: uppercase;
+}
+header p {
+    color: var(--light-color);
+    font-size: 1.5rem;
+    margin-top: 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+header::before {
+    content: "";
+    background: url('path/to/image') no-repeat center center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+nav {
+    background-color: var(--lightest-color);
+    padding: 1rem;
+    text-align: center;
+}
+nav ul {
+    display: flex;
+    justify-content: center;
+}
+nav li {
+    padding: 0 1rem;
+}
+nav a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+nav a:hover {
+    color: var(--lightest-color);
+    background-color: var(--main-color);
+    border-radius: 10px;
+    padding: 7px 12px;
+    transition: all .2s ease-in-out;
+    text-decoration: none;
+}
+
+
+
+/* Main content */
+main {
+    padding: 3rem;
+}
+
+#story h3 {
+    color: var(--main-color);
+}
+
+#products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.promote {
+    background-color: var(--lightest-color);
+    border-radius: 10px;
+    padding: 2rem;
+    flex-basis: 30%;
+    text-align: center;
+    margin: 2rem;
+}
+
+.promote h2 {
+    font-size: 5em;
+}
+
+.promote p {
+    color: var(--main-color);
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    padding: 1rem;
+    text-align: center;
+}
+footer p {
+    margin-bottom: 0.2rem;
+    font-size: 0.7em;
+    text-align: center;
+}
+footer a {
+    color: var(--light-color);
+    text-decoration: none;
+}
+
+/* Newsletter */
+#newsletter {
+    background-color: var(--main-color);
+    color: var(--light-color);
+    padding: 1rem;
+    text-align: center;
+}
+
+#newsletter h2, h3 {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    margin-top: 0.7rem;
+    margin-bottom: 0.7rem;
+}
+
+#newsletter form {
+    display: flex;
+    justify-content: center;
+}
+
+
+#newsletter input[type='email'] {
+    padding: 0.5rem;
+    margin-right: 1rem;
+    border: none;
+    border-radius: 3px;
+}
+
+#newsletter input[type='submit'] {
+    background-color: var(--light-color);
+    color: var(--main-color);
+    padding: 0.5rem 1rem;
+    margin-top: 0.7rem;
+    border: none;
+    border-radius: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+#newsletter input[type='submit']:hover {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+}
+
+
+
+
+/* Responsive design */
+@media only screen and (min-width: 640px) {
+    /* styles for viewports 640px and above */
+    h1, h2, h3, h4, h5, h6 {
+        font-size: 2rem;
+    }
+    nav li {
+        padding: 0 2rem;
+    }
+}
+@media only screen and (max-width: 1279px) {
+    /* styles for viewports up to 1279px */
+    nav li {
+        padding: 0 1rem;
+    }
+}
+
+
+
+/* Responsive design */
+@media only screen and (max-width: 768px) {
+    #newsletter input[type='email'] {
+        width: 60%;
+    }
+    #newsletter input[type='submit'] {
+        width: 40%;
+    }
+
+    p {
+        font-size: 1.1rem;
+    }
+
+    td {
+        font-size: 0.9rem;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+    header p {
+        font-size: 1.2rem;
+    }
+}
+
