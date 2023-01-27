@@ -49,19 +49,17 @@ q:before, q:after {
     --accent-color: #f2b6a8;
 }
 body {
-    /* background-color: var(--light-color);
-    color: var(--accent-color); */
     font-family: Arial, Helvetica, sans-serif;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(120deg, var(--light-color) 0%, var(--accent-color) 100%);
+    background-image: linear-gradient(var(--light-color) 0%, var(--accent-color) 100%);
     z-index: -1;
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
+h2, h3, h4, h5, h6 {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     text-align: left;
@@ -72,7 +70,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 header h1 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat Subrayada', sans-serif;
+    text-shadow: 2px 2px #000000;
     font-size: 3.5em;
     font-weight: bold;
     text-align: center;
@@ -138,7 +137,7 @@ p {
     background-color: transparent;
     padding: 1em;
     border-radius: 10px;
-    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.2);
+
     font-size: 1.2rem;
     font-family: 'Open Sans', sans-serif;
     color: var(--lightest-color);
@@ -157,10 +156,10 @@ p a {
     transition: all 0.3s ease;
 }
 p a:hover {
-    color: var(--light-color);
+    color: var(--lightest-color);
     background-color: var(--main-color);
     border-radius: 3px;
-    padding: 0.1rem;
+    padding: 0.2rem;
 }
 
 /* Layout */
@@ -213,13 +212,14 @@ nav a {
     font-weight: bold;
     color: var(--main-color);
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     text-transform: uppercase;
     border-bottom: none;
     transition: border-bottom 0.2s;
 }
 
 nav a:hover {
+    padding-top: 0.2rem;
     border-top: 5px solid var(--accent-color);
 }
 
@@ -280,7 +280,7 @@ tr:hover {
     width: 90%;
     border-radius: 10px;
     padding: 2rem;
-    flex-basis: 30%;
+    flex-basis: 65%;
     text-align: center;
     margin: 2rem;
 }
