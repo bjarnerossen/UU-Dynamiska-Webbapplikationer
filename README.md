@@ -16,4 +16,4 @@ Furthermore, it teaches to apply criteria and tools to evaluate the usability an
 | **[Lab 2](https://github.com/bjarnerossen/UU-Dynamiska-Webbapplikationer/blob/main/Lab2/stil/style.css)**   | `CSS`                            |   5-7 | ✅|
 | **Lab 3**   | `Javascript`                     |  8-13 |
 | **Lab 4**   | `W3 Standards` & `Accessability` | 14-15 |
-| **Project** | `Building a Website`.            | 16-20 |
+| **Project** | `Building a Website`      | 16-20 |
