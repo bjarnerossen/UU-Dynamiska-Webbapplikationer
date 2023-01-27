@@ -59,7 +59,7 @@ body {
 }
 
 /* Typography */
-h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6 {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     text-align: left;
@@ -67,17 +67,6 @@ h2, h3, h4, h5, h6 {
     text-transform: uppercase;
     margin-bottom: 0.5rem;
     padding: 0.5rem 0 0.5rem 0;
-}
-
-header h1 {
-    font-family: 'Montserrat Subrayada', sans-serif;
-    text-shadow: 2px 2px #000000;
-    font-size: 3.5em;
-    font-weight: bold;
-    text-align: center;
-    color: var(--main-color);
-    text-transform: uppercase;
-    letter-spacing: 2px;
 }
 
 .date {
@@ -164,7 +153,7 @@ p a:hover {
 
 /* Layout */
 #container {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto; /* center the container */
 }
 
@@ -178,15 +167,16 @@ header {
 }
 
 header h1 {
-    font-family: 'Surf', sans-serif;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-    letter-spacing: 0.1em;
-    margin-bottom: 0;
-    color: var(--lightest-color);
-    font-size: 3rem;
+    font-family: 'Montserrat Subrayada', sans-serif;
+    text-shadow: 5px 2px var(--accent-color);
+    font-size: 3.5em;
     font-weight: bold;
-    text-transform: uppercase;  
+    text-align: center;
+    color: var(--main-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
+
 header p {
     color: var(--lightest-color);
     font-size: 1.2rem;
@@ -212,7 +202,7 @@ nav a {
     font-weight: bold;
     color: var(--main-color);
     text-decoration: none;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     text-transform: uppercase;
     border-bottom: none;
     transition: border-bottom 0.2s;
@@ -366,7 +356,7 @@ footer a {
 
 
 
-/* Responsive design */
+/* Responsive design using media queries */
 @media only screen and (min-width: 640px) {
     /* styles for viewports 640px and above */
     h1, h2, h3, h4, h5, h6 {
@@ -376,6 +366,7 @@ footer a {
         padding: 0 2rem;
     }
 }
+
 @media only screen and (max-width: 1279px) {
     /* styles for viewports up to 1279px */
     nav li {
@@ -383,9 +374,6 @@ footer a {
     }
 }
 
-
-
-/* Responsive design */
 @media only screen and (max-width: 768px) {
     #newsletter input[type='email'] {
         width: 60%;
@@ -406,7 +394,7 @@ footer a {
         font-size: 2.5rem;
     }
     header p {
-        font-size: 1.2rem;
+        font-size: 0.7rem;
     }
 }
 
