@@ -17,3 +17,6 @@ Furthermore, it teaches to apply criteria and tools to evaluate the usability an
 | **Lab 3**   | `Javascript`                     |  8-13 |
 | **Lab 4**   | `W3 Standards` & `Accessability` | 14-15 |
 | **Project** | `Building a Website`      | 16-20 |
+
+---
+> **DISCLAIMER:** *The code provided in this repository is for educational purposes only. It is intended to demonstrate various concepts and techniques related to programming and software development. The code is not intended to be used as a reference for academic work or submissions.*
