@@ -15,7 +15,7 @@ Furthermore, it teaches to apply criteria and tools to evaluate the usability an
 | **[Lab 1](https://github.com/bjarnerossen/UU-Dynamiska-Webbapplikationer/blob/main/Lab1/index.html)**   | `HTML`                        |   3-4 | ✅ |
 | **[Lab 2](https://github.com/bjarnerossen/UU-Dynamiska-Webbapplikationer/blob/main/Lab2/stil/style.css)**   | `CSS`                            |   5-7 | ✅|
 | **[Lab 3](https://github.com/bjarnerossen/UU-Dynamiska-Webbapplikationer/tree/main/Lab3/Stryktipset/assets/js)**   | `Javascript`                     |  8-13 | ✅ |
-| **Lab 4**   | `W3 Standards` & `Accessability` | 14-15 |
+| **Lab 4**   | `W3 Standards` & `Accessability` | 14-15 | ✅ |
 | **Project** | `Building a Website`      | 16-20 |
 
 ---
