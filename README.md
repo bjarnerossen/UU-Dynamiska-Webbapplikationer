@@ -1,4 +1,4 @@
-# UU-Dynamiska Webbapplikationer 🌐r (UU-76025)
+# UU-Dynamiska Webbapplikationer (UU-76025)
 
 ## Web Application Development course at Uppsala University
 ### Course Description
