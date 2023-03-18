@@ -1,19 +1,25 @@
-# UU-Dynamiska Webbapplikationer (UU-76025)
-
-## Web Application Development course at Uppsala University
-### Course Description
+# Web Application Development course at Uppsala University (2IS220)
 This course covers a set of techniques for developing web applications: HTML and CSS for designing web pages, JavaScript to give web pages useful functions and a good user experience, and connection to databases to manage information and media content.
 
 Furthermore, it teaches to apply criteria and tools to evaluate the usability and accessibility of web pages.
 
----
-### 💻 Technologies
-* `HTML`r
+## 💻 Technologies
+* `HTML`
 * `CSS`
 * `JavaScript`
 * `SQL`
 
-### **🗓️ Course Outline**
+## 🚀 Getting Started
+
+To get started with this repository, simply clone the repository to your local machine.
+```terminal
+$ git clone https://github.com/bjarnerossen/uu-dynamiska-webbapplikationer.git
+```
+Each week contains a directory that includes the source code and relevant files for that week's assignments and projects.
+
+
+
+## **🗓️ Course Outline**
 
 | Name        | Theme                           |  Week | Status |
 | :---------- | :------------------------------- | ----: | :----: |
