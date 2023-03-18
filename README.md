@@ -13,7 +13,7 @@ Furthermore, it teaches to apply criteria and tools to evaluate the usability an
 
 To get started with this repository, simply clone the repository to your local machine.
 ```terminal
-$ git clone https://github.com/bjarnerossen/uu-dynamiska-webbapplikationer.git
+$ git clone https://github.com/bjarnerossen/UU-Dynamiska-Webbapplikationer.git
 ```
 Each week contains a directory that includes the source code and relevant files for that week's assignments and projects.
 
