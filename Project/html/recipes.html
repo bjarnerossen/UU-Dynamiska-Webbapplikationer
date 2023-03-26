@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../img/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../img/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../img/favicon-16x16.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/recipes.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Grocery Guru - Index</title>
+  </head>
+  <body>
+    <header>
+      <h1 class="logo">grocery <span class="dot">&#x2022;</span> guru</h1>
+      <button>
+        <a href="#" class="cta"
+          >Contact
+          <span
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-arrow-up-right-circle-fill"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M0 8a8 8 0 1 0 16 0A8 8 0 0 0 0 8zm5.904 2.803a.5.5 0 1 1-.707-.707L9.293 6H6.525a.5.5 0 1 1 0-1H10.5a.5.5 0 0 1 .5.5v3.975a.5.5 0 0 1-1 0V6.707l-4.096 4.096z"
+              /></svg></span
+        ></a>
+      </button>
+    </header>
+    <main>
+      <section class="top-content">
+        <div class="top-container"></div>
+        <form action="">
+          <button type="submit">get recipes</button>
+        </form>
+      </section>
+      <section class="recipes-content">
+        <div class="center-container" id="recipe-list"></div>
+        <div class="clipboard-container">
+          <textarea
+            id="clipboard"
+            placeholder="Your grocery list will be displayed here..."
+          ></textarea>
+          <button id="copy-button">
+            Copy<i class="bi bi-clipboard-check-fill"></i>
+          </button>
+        </div>
+      </section>
+    </main>
+    <script src="../js/recipes.js"></script>
+    <script src="../js/navbar.js"></script>
+  </body>
+</html>
