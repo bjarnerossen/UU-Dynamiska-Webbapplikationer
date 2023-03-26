@@ -26,6 +26,7 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
     />
     <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/navbar.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -36,12 +37,25 @@
   </head>
   <body>
     <header>
-      <h1 class="logo">grocery <span class="dot">&#x2022;</span> guru</h1>
-      <button>
+      <nav>
+        <h1 class="logo">grocery <span class="dot">&#x2022;</span> guru</h1>
+        <ul class="nav-links">
+          <li><a href="../html/index.html" class="nav-link">Home</a></li>
+          <li><a href="../html/recipes.html" class="nav-link">Recipes</a></li>
+          <li><a href="../html/about.html" class="nav-link">About</a></li>
+        </ul>
+        <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+      </nav>
+
+      <!-- <button>
         <a href="#" class="cta"
           >Contact <i class="bi bi-arrow-up-right-circle-fill"></i></i
         ></a>
-      </button>
+      </button> -->
     </header>
     <main>
       <section>
@@ -49,23 +63,30 @@
           Let the
           <a class="guru"
             >guru
-            <i style="font-size: 2rem;" class="bi bi-arrow-up-right-circle-fill"></i></a
+            <i
+              style="font-size: 2rem"
+              class="bi bi-arrow-up-right-circle-fill"
+            ></i></a
           ><br />
           do the magic
           <span class="food-emoji" style="font-size: 100px">&#129361;</span>
         </h2>
         <p class="description-index">
-            Get personalized vegan, vegetarian, and gluten-free recipe<br>
-            recommendations and let Grocery Guru<br>
-            generate your grocery list!
+          Get personalized vegan, vegetarian, and gluten-free recipe<br />
+          recommendations and let Grocery Guru<br />
+          generate your grocery list!
         </p>
         <button class="index_btn">
           <a href="../html/recipes.html" class="">get started</a>
         </button>
         <div class="phone-container">
-            <img src="phone-mockup.png" alt="phone mockup for demonstration purposes">
-            <div class="grocery-list"></div>
-          </div>
+          <img
+            class="phone-mockup-wrapper"
+            src="../img/iphone-transparent-mockup.png"
+            alt="phone mockup for demonstration purposes"
+          />
+          <div class="grocery-list"></div>
+        </div>
       </section>
     </main>
     <script src="../js/index.js"></script>
