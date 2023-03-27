@@ -58,12 +58,50 @@
       </button>
     </header>
     <main>
-      <section class="top-content">
-        <div class="top-container"></div>
-        <form action="">
-          <button type="submit">get recipes</button>
+      <section class="filter-content">
+        <h2>Filter Recipes<span class="headline-dot">.</span></h2>
+        <form id="recipe-form">
+          <div class="form-group">
+            <label for="food-type">Food Type:</label>
+            <select id="food-type" name="food-type" multiple>
+              <option value="vegan">Vegan</option>
+              <option value="vegetarian">Vegetarian</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="meal-type">Dish Type:</label>
+            <select id="meal-type" name="meal-type">
+              <option value="lunch">Lunch</option>
+              <option value="main-course">Main Course</option>
+              <option value="main-dish">Main Dish</option>
+              <option value="dinner">Dinner</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="dairy-free">Dairy-free:</label>
+            <select id="dairy-free" name="dairy-free">
+              <option value="no">No</option>
+              <option value="yes">Yes</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="sustainable">Sustainable:</label>
+            <select id="sustainable" name="sustainable">
+              <option value="no">No</option>
+              <option value="yes" selected>Yes</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="gluten-free">Gluten-free:</label>
+            <select id="gluten-free" name="gluten-free">
+              <option value="no" selected>No</option>
+              <option value="yes">Yes</option>
+            </select>
+          </div>
+          <button type="submit">Get Recipes</button>
         </form>
       </section>
+
       <section class="recipes-content">
         <div class="center-container" id="recipe-list"></div>
         <div class="clipboard-container">
