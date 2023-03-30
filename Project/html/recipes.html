@@ -37,83 +37,153 @@
     <title>Grocery Guru - Index</title>
   </head>
   <body>
-    <header>
-      <h1 class="logo">grocery <span class="dot">&#x2022;</span> guru</h1>
-      <button>
-        <a href="#" class="cta"
-          >Contact
-          <span
-            ><svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="bi bi-arrow-up-right-circle-fill"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M0 8a8 8 0 1 0 16 0A8 8 0 0 0 0 8zm5.904 2.803a.5.5 0 1 1-.707-.707L9.293 6H6.525a.5.5 0 1 1 0-1H10.5a.5.5 0 0 1 .5.5v3.975a.5.5 0 0 1-1 0V6.707l-4.096 4.096z"
-              /></svg></span
-        ></a>
-      </button>
-    </header>
     <main>
-      <section class="filter-content">
-        <h2>Filter Recipes<span class="headline-dot">.</span></h2>
-        <form id="recipe-form">
+      <div class="container">
+        <h2>
+          Get Cookin'<br />and<br />Groovin'🪩<span class="headline-dot">.</span>
+        </h2>
+        <p>Create Your Grocery List with Ease!</p>
+        <section class="main-container">
           <div class="form-group">
-            <label for="food-type">Food Type:</label>
-            <select id="food-type" name="food-type" multiple>
-              <option value="vegan">Vegan</option>
-              <option value="vegetarian">Vegetarian</option>
-            </select>
+            <button id="toggle-form-btn" type="button">Show Form</button>
           </div>
-          <div class="form-group">
-            <label for="meal-type">Dish Type:</label>
-            <select id="meal-type" name="meal-type">
-              <option value="lunch">Lunch</option>
-              <option value="main-course">Main Course</option>
-              <option value="main-dish">Main Dish</option>
-              <option value="dinner">Dinner</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="dairy-free">Dairy-free:</label>
-            <select id="dairy-free" name="dairy-free">
-              <option value="no">No</option>
-              <option value="yes">Yes</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="sustainable">Sustainable:</label>
-            <select id="sustainable" name="sustainable">
-              <option value="no">No</option>
-              <option value="yes" selected>Yes</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="gluten-free">Gluten-free:</label>
-            <select id="gluten-free" name="gluten-free">
-              <option value="no" selected>No</option>
-              <option value="yes">Yes</option>
-            </select>
-          </div>
-          <button type="submit">Get Recipes</button>
-        </form>
-      </section>
+          <form id="recipe-form" class="hidden">
+            <div class="form-group">
+              <label for="diet">Diet:</label>
+              <select id="diet" name="diet">
+                <option value="" selected>Any</option>
+                <option value="gluten%20free">Gluten-free</option>
+                <option value="ketogenic">Ketogenic</option>
+                <option value="vegetarian">Vegetarian</option>
+                <option value="lacto%20vegetarian">Lacto Vegetarian</option>
+                <option value="ovo%20vegetarian">Ovo Vegetarian</option>
+                <option value="vegan">Vegan</option>
+                <option value="pescetarian">Pescetarian</option>
+                <option value="paleo">Paleo</option>
+                <option value="primal">Primal</option>
+                <option value="whole%2030">Whole 30</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="meal-type">Meal Type:</label>
+              <select id="meal-type" name="meal-type">
+                <option value="" selected>Any</option>
+                <option value="main%20course">Main Course</option>
+                <option value="side%20dish">Side Dish</option>
+                <option value="dessert">Dessert</option>
+                <option value="appetizer">Appetizer</option>
+                <option value="salad">Salad</option>
+                <option value="bread">Bread</option>
+                <option value="breakfast">Breakfast</option>
+                <option value="soup">Soup</option>
+                <option value="beverage">Beverage</option>
+                <option value="sauce">Sauce</option>
+                <option value="marinade">Marinade</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="intolerances">Intolerances:</label>
+              <select id="intolerances" name="intolerances" multiple>
+                <option value="" selected>None</option>
+                <option value="dairy">Dairy</option>
+                <option value="egg">Egg</option>
+                <option value="gluten">Gluten</option>
+                <option value="grain">Grain</option>
+                <option value="peanut">Peanut</option>
+                <option value="seafood">Seafood</option>
+                <option value="sesame">Sesame</option>
+                <option value="shellfish">Shellfish</option>
+                <option value="soy">Soy</option>
+                <option value="sulfite">Sulfite</option>
+                <option value="tree%20nut">Tree Nut</option>
+                <option value="wheat">Wheat</option>
+              </select>
+            </div>
 
-      <section class="recipes-content">
-        <div class="center-container" id="recipe-list"></div>
-        <div class="clipboard-container">
-          <textarea
-            id="clipboard"
-            placeholder="Your grocery list will be displayed here..."
-          ></textarea>
-          <button id="copy-button">
-            Copy<i class="bi bi-clipboard-check-fill"></i>
-          </button>
-        </div>
-      </section>
+            <div class="form-group">
+              <label for="cuisine">Cuisine:</label>
+              <select id="cuisine" name="cuisine">
+                <option value="" selected>Any</option>
+                <option value="african">African</option>
+                <option value="american">American</option>
+                <option value="british">British</option>
+                <option value="cajun">Cajun</option>
+                <option value="caribbean">Caribbean</option>
+                <option value="chinese">Chinese</option>
+                <option value="eastern%20european">Eastern European</option>
+                <option value="european">European</option>
+                <option value="french">French</option>
+                <option value="german">German</option>
+                <option value="greek">Greek</option>
+                <option value="indian">Indian</option>
+                <option value="irish">Irish</option>
+                <option value="italian">Italian</option>
+                <option value="japanese">Japanese</option>
+                <option value="jewish">Jewish</option>
+                <option value="korean">Korean</option>
+                <option value="latin%20american">Latin American</option>
+                <option value="mediterranean">Mediterranean</option>
+                <option value="mexican">Mexican</option>
+                <option value="middle%20eastern">Middle Eastern</option>
+                <option value="nordic">Nordic</option>
+                <option value="southern">Southern</option>
+                <option value="spanish">Spanish</option>
+                <option value="thai">Thai</option>
+                <option value="vietnamese">Vietnamese</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="diet">Diet:</label>
+              <select id="diet" name="diet">
+                <option value="" selected>Any</option>
+                <option value="gluten%20free">Gluten-free</option>
+                <option value="ketogenic">Ketogenic</option>
+                <option value="vegetarian">Vegetarian</option>
+                <option value="lacto%20vegetarian">Lacto Vegetarian</option>
+                <option value="ovo%20vegetarian">Ovo Vegetarian</option>
+                <option value="vegan">Vegan</option>
+                <option value="pescetarian">Pescetarian</option>
+                <option value="paleo">Paleo</option>
+                <option value="primal">Primal</option>
+                <option value="whole%2030">Whole 30</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="max-ready-time">Max Ready Time:</label>
+              <input
+                type="range"
+                id="max-ready-time"
+                name="max-ready-time"
+                min="0"
+                max="120"
+                step="5"
+                value="30"
+              />
+              <output for="max-ready-time" id="max-ready-time-value">30</output>
+              minutes
+            </div>
+            <div class="form-group">
+              <button type="submit" id="submit-btn">Filter</button>
+            </div>
+          </form>
+
+          <section class="recipes-content">
+            <div class="center-container" id="recipe-list"></div>
+          </section>
+
+          <section>
+            <div class="clipboard-container">
+              <textarea
+                id="clipboard"
+                placeholder="Your grocery list will be displayed here..."
+              ></textarea>
+              <button id="copy-button">
+                Copy<i class="bi bi-clipboard"></i>
+              </button>
+            </div>
+          </section>
+        </section>
+      </div>
     </main>
     <script src="../js/recipes.js"></script>
     <script src="../js/navbar.js"></script>
