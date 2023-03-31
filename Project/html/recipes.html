@@ -25,6 +25,10 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
     <link rel="stylesheet" type="text/css" href="../css/style.css" />
     <link rel="stylesheet" type="text/css" href="../css/navbar.css" />
     <link rel="stylesheet" type="text/css" href="../css/recipes.css" />
@@ -43,130 +47,132 @@
           Get Cookin'<br />and<br />Groovin'🪩<span class="headline-dot">.</span>
         </h2>
         <p>Create Your Grocery List with Ease!</p>
-        <section class="main-container">
+
+        <div class="form-group">
+          <button id="toggle-form-btn" type="button">
+            <i class="bi bi-filter-circle"></i>
+          </button>
+        </div>
+        <form id="recipe-form" class="hidden">
           <div class="form-group">
-            <button id="toggle-form-btn" type="button">Show Form</button>
+            <label for="diet">Diet:</label>
+            <select id="diet" name="diet">
+              <option value="" selected>Any</option>
+              <option value="gluten%20free">Gluten-free</option>
+              <option value="ketogenic">Ketogenic</option>
+              <option value="vegetarian">Vegetarian</option>
+              <option value="lacto%20vegetarian">Lacto Vegetarian</option>
+              <option value="ovo%20vegetarian">Ovo Vegetarian</option>
+              <option value="vegan">Vegan</option>
+              <option value="pescetarian">Pescetarian</option>
+              <option value="paleo">Paleo</option>
+              <option value="primal">Primal</option>
+              <option value="whole%2030">Whole 30</option>
+            </select>
           </div>
-          <form id="recipe-form" class="hidden">
-            <div class="form-group">
-              <label for="diet">Diet:</label>
-              <select id="diet" name="diet">
-                <option value="" selected>Any</option>
-                <option value="gluten%20free">Gluten-free</option>
-                <option value="ketogenic">Ketogenic</option>
-                <option value="vegetarian">Vegetarian</option>
-                <option value="lacto%20vegetarian">Lacto Vegetarian</option>
-                <option value="ovo%20vegetarian">Ovo Vegetarian</option>
-                <option value="vegan">Vegan</option>
-                <option value="pescetarian">Pescetarian</option>
-                <option value="paleo">Paleo</option>
-                <option value="primal">Primal</option>
-                <option value="whole%2030">Whole 30</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="meal-type">Meal Type:</label>
-              <select id="meal-type" name="meal-type">
-                <option value="" selected>Any</option>
-                <option value="main%20course">Main Course</option>
-                <option value="side%20dish">Side Dish</option>
-                <option value="dessert">Dessert</option>
-                <option value="appetizer">Appetizer</option>
-                <option value="salad">Salad</option>
-                <option value="bread">Bread</option>
-                <option value="breakfast">Breakfast</option>
-                <option value="soup">Soup</option>
-                <option value="beverage">Beverage</option>
-                <option value="sauce">Sauce</option>
-                <option value="marinade">Marinade</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="intolerances">Intolerances:</label>
-              <select id="intolerances" name="intolerances" multiple>
-                <option value="" selected>None</option>
-                <option value="dairy">Dairy</option>
-                <option value="egg">Egg</option>
-                <option value="gluten">Gluten</option>
-                <option value="grain">Grain</option>
-                <option value="peanut">Peanut</option>
-                <option value="seafood">Seafood</option>
-                <option value="sesame">Sesame</option>
-                <option value="shellfish">Shellfish</option>
-                <option value="soy">Soy</option>
-                <option value="sulfite">Sulfite</option>
-                <option value="tree%20nut">Tree Nut</option>
-                <option value="wheat">Wheat</option>
-              </select>
-            </div>
+          <div class="form-group">
+            <label for="meal-type">Meal Type:</label>
+            <select id="meal-type" name="meal-type">
+              <option value="" selected>Any</option>
+              <option value="main%20course">Main Course</option>
+              <option value="side%20dish">Side Dish</option>
+              <option value="dessert">Dessert</option>
+              <option value="appetizer">Appetizer</option>
+              <option value="salad">Salad</option>
+              <option value="bread">Bread</option>
+              <option value="breakfast">Breakfast</option>
+              <option value="soup">Soup</option>
+              <option value="beverage">Beverage</option>
+              <option value="sauce">Sauce</option>
+              <option value="marinade">Marinade</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="intolerances">Intolerances:</label>
+            <select id="intolerances" name="intolerances" multiple>
+              <option value="" selected>None</option>
+              <option value="dairy">Dairy</option>
+              <option value="egg">Egg</option>
+              <option value="gluten">Gluten</option>
+              <option value="grain">Grain</option>
+              <option value="peanut">Peanut</option>
+              <option value="seafood">Seafood</option>
+              <option value="sesame">Sesame</option>
+              <option value="shellfish">Shellfish</option>
+              <option value="soy">Soy</option>
+              <option value="sulfite">Sulfite</option>
+              <option value="tree%20nut">Tree Nut</option>
+              <option value="wheat">Wheat</option>
+            </select>
+          </div>
 
-            <div class="form-group">
-              <label for="cuisine">Cuisine:</label>
-              <select id="cuisine" name="cuisine">
-                <option value="" selected>Any</option>
-                <option value="african">African</option>
-                <option value="american">American</option>
-                <option value="british">British</option>
-                <option value="cajun">Cajun</option>
-                <option value="caribbean">Caribbean</option>
-                <option value="chinese">Chinese</option>
-                <option value="eastern%20european">Eastern European</option>
-                <option value="european">European</option>
-                <option value="french">French</option>
-                <option value="german">German</option>
-                <option value="greek">Greek</option>
-                <option value="indian">Indian</option>
-                <option value="irish">Irish</option>
-                <option value="italian">Italian</option>
-                <option value="japanese">Japanese</option>
-                <option value="jewish">Jewish</option>
-                <option value="korean">Korean</option>
-                <option value="latin%20american">Latin American</option>
-                <option value="mediterranean">Mediterranean</option>
-                <option value="mexican">Mexican</option>
-                <option value="middle%20eastern">Middle Eastern</option>
-                <option value="nordic">Nordic</option>
-                <option value="southern">Southern</option>
-                <option value="spanish">Spanish</option>
-                <option value="thai">Thai</option>
-                <option value="vietnamese">Vietnamese</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="diet">Diet:</label>
-              <select id="diet" name="diet">
-                <option value="" selected>Any</option>
-                <option value="gluten%20free">Gluten-free</option>
-                <option value="ketogenic">Ketogenic</option>
-                <option value="vegetarian">Vegetarian</option>
-                <option value="lacto%20vegetarian">Lacto Vegetarian</option>
-                <option value="ovo%20vegetarian">Ovo Vegetarian</option>
-                <option value="vegan">Vegan</option>
-                <option value="pescetarian">Pescetarian</option>
-                <option value="paleo">Paleo</option>
-                <option value="primal">Primal</option>
-                <option value="whole%2030">Whole 30</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="max-ready-time">Max Ready Time:</label>
-              <input
-                type="range"
-                id="max-ready-time"
-                name="max-ready-time"
-                min="0"
-                max="120"
-                step="5"
-                value="30"
-              />
-              <output for="max-ready-time" id="max-ready-time-value">30</output>
-              minutes
-            </div>
-            <div class="form-group">
-              <button type="submit" id="submit-btn">Filter</button>
-            </div>
-          </form>
-
+          <div class="form-group">
+            <label for="cuisine">Cuisine:</label>
+            <select id="cuisine" name="cuisine">
+              <option value="" selected>Any</option>
+              <option value="african">African</option>
+              <option value="american">American</option>
+              <option value="british">British</option>
+              <option value="cajun">Cajun</option>
+              <option value="caribbean">Caribbean</option>
+              <option value="chinese">Chinese</option>
+              <option value="eastern%20european">Eastern European</option>
+              <option value="european">European</option>
+              <option value="french">French</option>
+              <option value="german">German</option>
+              <option value="greek">Greek</option>
+              <option value="indian">Indian</option>
+              <option value="irish">Irish</option>
+              <option value="italian">Italian</option>
+              <option value="japanese">Japanese</option>
+              <option value="jewish">Jewish</option>
+              <option value="korean">Korean</option>
+              <option value="latin%20american">Latin American</option>
+              <option value="mediterranean">Mediterranean</option>
+              <option value="mexican">Mexican</option>
+              <option value="middle%20eastern">Middle Eastern</option>
+              <option value="nordic">Nordic</option>
+              <option value="southern">Southern</option>
+              <option value="spanish">Spanish</option>
+              <option value="thai">Thai</option>
+              <option value="vietnamese">Vietnamese</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="diet">Diet:</label>
+            <select id="diet" name="diet">
+              <option value="" selected>Any</option>
+              <option value="gluten%20free">Gluten-free</option>
+              <option value="ketogenic">Ketogenic</option>
+              <option value="vegetarian">Vegetarian</option>
+              <option value="lacto%20vegetarian">Lacto Vegetarian</option>
+              <option value="ovo%20vegetarian">Ovo Vegetarian</option>
+              <option value="vegan">Vegan</option>
+              <option value="pescetarian">Pescetarian</option>
+              <option value="paleo">Paleo</option>
+              <option value="primal">Primal</option>
+              <option value="whole%2030">Whole 30</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="max-ready-time">Max Ready Time:</label>
+            <input
+              type="range"
+              id="max-ready-time"
+              name="max-ready-time"
+              min="0"
+              max="120"
+              step="5"
+              value="30"
+            />
+            <output for="max-ready-time" id="max-ready-time-value">30</output>
+            minutes
+          </div>
+          <div class="form-group">
+            <button type="submit" id="submit-btn">Filter</button>
+          </div>
+        </form>
+        <section class="main-container">
           <section class="recipes-content">
             <div class="center-container" id="recipe-list"></div>
           </section>
