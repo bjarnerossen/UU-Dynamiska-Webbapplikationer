@@ -103,8 +103,34 @@ li, a, button {
 }
 
 .food-emoji {
-    font-size: 100px;
+  font-size: 100px;
+  animation: floating 3s ease-in-out infinite, pulsing 3s ease-in-out infinite;
+  margin-left: 30px;
+  margin-top: 5px;
+  color: #fff;
+  text-shadow: 
+    0 0 5px #fff, 
+    0 0 10px #fff, 
+    0 0 15px #fff, 
+    0 0 20px #b2ff00, 
+    0 0 35px var(--accent-color-1),
+    0 0 40px var(--accent-color-2), 
+    0 0 50px var(--accent-color-2);
 }
+
+@keyframes floating {
+  0% { transform: translate(0, 0px) scale(1); }
+  50% { transform: translate(0, 15px) scale(1.1); }
+  100% { transform: translate(0, 0px) scale(1); }
+}
+
+@keyframes pulsing {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+
   
 .index_btn {
         text-transform: uppercase;

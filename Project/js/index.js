@@ -5,7 +5,7 @@ function emoji_swapper() {
     setInterval(() => {
       const randomIndex = Math.floor(Math.random() * emojis.length);
       food_emoji.innerHTML = emojis[randomIndex];
-    }, 2000);
+    }, 5000);
   }
   
   emoji_swapper();
@@ -35,7 +35,6 @@ const groceryItems = [
   groceryItems.forEach((item) => {
     const listItem = document.createElement('div');
     listItem.classList.add('grocery-item');
-
     const itemName = document.createElement('span');
     itemName.classList.add('item-name');
     itemName.style.fontWeight = 'bold';
