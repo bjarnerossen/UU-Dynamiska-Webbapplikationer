@@ -1,0 +1,66 @@
+/* Hero Section */
+.hero {
+    color: whitesmoke;
+    background-color: #fff;
+    text-align: center;
+    padding: 50px 0;
+    margin-bottom: 40px;
+  }
+  
+  .hero h1 {
+    position: fixed;
+    margin-left: 2rem;
+    font-size: 5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+  
+  /* Content Section */
+  .content {
+    max-width: 1000px;
+    padding: 0 20px;
+    line-height: 1.6;
+  }
+  
+  .content h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 40px 0 20px 0;
+  }
+  
+  .content p {
+    margin-bottom: 20px;
+  }
+  
+  .content ol {
+    text-align: left;
+    margin-bottom: 40px;
+  }
+  
+  .content ol li {
+    margin-bottom: 10px;
+  }
+  
+  .divider {
+    margin-right: 1rem;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 20.5rem;
+    width: 1px;
+    background-color: #ccc;
+    display: none;
+  }
+
+  .content.scrolled {
+    transition: margin-left 0.5s ease;
+    margin-left: 18rem;
+  }
+  
+  
+  @media screen and (min-width: 768px) {
+    .divider {
+      display: block;
+    }
+  }
+  

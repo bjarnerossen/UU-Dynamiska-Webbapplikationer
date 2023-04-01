@@ -1,0 +1,399 @@
+:root {
+    /* Primary colors */
+    --primary-color: #1A1A1A; /* dark grey */
+    --secondary-color: #EFEFEF; /* light grey */
+
+    /* Accent colors */
+    --accent-color-1: #90ee90;/* green */
+    --accent-color-2: #c7f9cc; /* light green */
+
+    /* Background colors */
+    --background-color: #242423; /* white */
+    --background-color-alt: #F2F2F2; /* light grey */
+
+    /* Text colors */
+    --text-color: #1A1A1A; /* dark grey */
+    --text-color-light: #666666; /* light grey */
+    --text-color-alt: #FFFFFF; /* white */
+
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    margin: 4rem 4rem 0 4rem;
+    padding: 0;
+    background-color: var(--background-color);
+} 
+
+.container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+.container > h2,
+.container > p {
+    margin-top: 0;
+  }
+
+.main-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+h2 {
+    text-transform: uppercase;
+    text-align: left;
+    font-size: 4rem;
+    margin-bottom: 0;
+    color: var(--text-color-alt);
+  }
+
+p {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+    line-height: 1.5;
+    text-align: left;
+    color: var(--text-color-alt);
+  }
+  
+/* Recipe Filter Form Styles */
+.hidden {
+    display: none;
+}
+
+form:not(button) {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 600px;
+    background-color: var(--text-color-alt);
+    border-radius: 20px;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+  }
+
+  .close-icon {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+    color: black;
+    z-index: 9999;
+    border: none;
+    background-color: transparent;
+    }
+
+  .fade-in {
+    opacity: 1 !important; /* override the opacity property set by the hidden class */
+    transition: opacity 2s ease-in-out;
+  }
+  
+.form-group {
+    margin-right: 2rem;
+    width: 100%;
+  }
+
+  #toggle-form-btn {
+    color: var(--accent-color-2);
+    padding: 1rem;
+    border: none;
+    position: fixed;
+    top: 10rem;
+    right: 1rem;
+    background-color: transparent;
+    z-index: 9999; /* Ensure the button is on top of other content */
+  }
+  
+#toggle-form-btn .bi-filter-circle {
+    font-size: 2rem;
+}
+  
+  label {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #555;
+    margin-bottom: 1rem;
+    display: block;
+  }
+  
+  select {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 10px;
+    background-color: #f5f5f5;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #444;
+    margin-bottom: 2rem;
+  }
+  
+  input[type="range"] {
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    outline: none;
+    margin-bottom: 1rem;
+  }
+  
+  input[type="range"]::-webkit-slider-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #333;
+    cursor: pointer;
+  }
+  
+  output {
+    font-size: 1.2rem;
+    font-weight: 700;
+    display: inline-block;
+    margin-left: 10px;
+    color: #555;
+  }
+  
+  button[type="submit"] {
+    align-items: center;
+    font-weight: 700;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 1rem;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 2rem;
+    margin-left: 0 auto 0;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #555;
+  }
+
+  .form-group label {
+    text-align: left;
+  }
+  
+  /* Additional styles */
+  .form-group label:after {
+    content: "*";
+    color: #FF3B30;
+    margin-left: 5px;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 3px;
+    background-color: white;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+  }
+  
+  .form-group input:focus {
+    outline: none;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.2);
+  }
+  
+  .form-group input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  
+  .form-group input[type="radio"] {
+    margin-right: 10px;
+  }
+  
+  .form-group select:focus,
+  .form-group input:focus {
+    border: 2px solid var(--background-color);
+  }
+  
+  
+
+/* Recipe Container & Card styles */
+.recipes-content {
+    margin-top: 2rem;
+    background-color: transparent;
+    padding: 40px 20px;
+    width: 70%;
+    border-radius: 30px;
+  }
+  
+  .center-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+  }
+  
+  .recipe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--background-color-alt);
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 400px;
+    transition: box-shadow 0.3s ease-in-out;
+  }
+  
+  .recipe:hover {
+    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.15);
+  }
+  
+  .recipe img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .recipe h3 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    text-align: center;
+  }
+
+  .label {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-right: 8px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .label-gf {
+    background-color: #c3e6cb;
+    color: #155724;
+  }
+  
+  .label-v {
+    background-color: #2e7d32;
+    color: #ffffff;
+  }
+  
+  .label-vg {
+    background-color: #4caf50;
+    color: #ffffff;
+  }
+  
+
+  .label:first-child {
+    margin-top: 1rem;
+  }
+
+  .label:last-child {
+    margin-bottom: 0;
+  }
+  
+  .label i {
+    margin-right: 0.5rem;
+  }
+
+  .recipe .ingredients {
+    color: var(--text-color);
+    margin: 1rem;
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .recipe .ingredients li {
+    margin: 0.5rem 0;
+  }
+  
+  .add-button,
+  .remove-button {
+    align-items: center;
+    margin: 1rem;
+    background-color: transparent;
+    border: 2px solid #000;
+    border-radius: 30px;
+    color: #000;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    transition: all 0.2s ease;
+  }
+  
+  .add-button:hover,
+  .remove-button:hover {
+    background-color: #000;
+    color: #fff;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out forwards;
+  }
+  
+
+/* Clipboard styles */
+.clipboard-container {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    margin: 2rem;
+    width: 30%;
+  }
+  
+  #clipboard {
+    font-family: "Raleway", sans-serif;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 16px;
+    resize: none;
+    height: 100vh;
+    width: 120px;
+    margin-bottom: 20px;
+    border-radius: 30px;
+  }
+  
+  #copy-button {
+    margin-left: 0 auto;
+    font-weight: 700;
+    display: flex;
+    flex-direction: row;
+    justify-items: auto;
+    width: 110px;
+    background-color: #333;
+    color: #fff;
+    border: 0.2px solid white;
+    padding: 1rem;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    cursor: pointer;
+  }
+
+  #copy-button i {
+    margin-left: 0.4rem;
+  }
+  
+  #copy-button:hover {
+    background-color: #555;
+  }
