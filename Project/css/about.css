@@ -8,7 +8,7 @@
   }
   
   .hero h1 {
-    position: fixed;
+    text-align: left;
     margin-left: 2rem;
     font-size: 5rem;
     font-weight: bold;
@@ -20,6 +20,7 @@
     max-width: 1000px;
     padding: 0 20px;
     line-height: 1.6;
+    color: white;
   }
   
   .content h2 {
@@ -40,27 +41,26 @@
   .content ol li {
     margin-bottom: 10px;
   }
-  
-  .divider {
-    margin-right: 1rem;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 20.5rem;
-    width: 1px;
-    background-color: #ccc;
-    display: none;
-  }
 
-  .content.scrolled {
-    transition: margin-left 0.5s ease;
-    margin-left: 18rem;
-  }
-  
-  
-  @media screen and (min-width: 768px) {
-    .divider {
-      display: block;
+.content .emoji {
+    text-align: center;
+    font-size: 100px;
+    animation: floating 3s ease-in-out infinite !important;
+    margin-left: 6rem;
+    margin-top: 5px;
+    color: #fff;
+    text-shadow: 
+      0 0 5px #fff, 
+      0 0 10px #fff, 
+      0 0 15px #fff, 
+      0 0 20px #b2ff00, 
+      0 0 35px var(--accent-color-1),
+      0 0 40px var(--accent-color-2), 
+      0 0 50px var(--accent-color-2);
     }
-  }
   
+@keyframes floating {
+    0% { transform: translate(0, 0px) scale(1); }
+    50% { transform: translate(0, 15px) scale(1.1); }
+    100% { transform: translate(0, 0px) scale(1); }
+  }
