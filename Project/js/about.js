@@ -33,6 +33,11 @@ function handleScroll() {
     });
   }
 
+  let transitionDuration = 0.3; // seconds
+  let transitionDelay = 0.1; // seconds
+  let fontSize = '16px';
+  let color = 'rgba(0,0,0,0.5)';
+  
   listItems.forEach((item, index) => {
     const itemHeight = item.offsetHeight;
     const itemOffsetTop = item.offsetTop;
@@ -44,19 +49,25 @@ function handleScroll() {
 
       item.style.color = 'white';
       item.style.fontSize = '24px';
-      item.style.transition = 'color 0.5s ease-in-out, font-size 0.5s 0.2s ease-in-out';
+      item.style.transition = `color ${transitionDuration}s ease-in-out, font-size ${transitionDuration}s ${transitionDelay}s ease-in-out`;
       
       if (nextItem) {
-        nextItem.style.color = 'rgba(0,0,0,0.5)';
-        nextItem.style.fontSize = '16px';
-        nextItem.style.transition = 'color 0.5s 0.2s ease-in-out, font-size 0.5s 0.4s ease-in-out';
+        nextItem.style.color = color;
+        nextItem.style.fontSize = fontSize;
+        nextItem.style.transition = `color ${transitionDuration}s ${transitionDelay}s ease-in-out, font-size ${transitionDuration}s ${transitionDelay * 2}s ease-in-out`;
       }
       
       if (prevItem) {
-        prevItem.style.color = 'rgba(0,0,0,0.5)';
-        prevItem.style.fontSize = '16px';
-        prevItem.style.transition = 'color 0.5s 0.2s ease-in-out, font-size 0.5s 0.4s ease-in-out';
+        prevItem.style.color = color;
+        prevItem.style.fontSize = fontSize;
+        prevItem.style.transition = `color ${transitionDuration}s ${transitionDelay}s ease-in-out, font-size ${transitionDuration}s ${transitionDelay * 2}s ease-in-out`;
       }
+
+      // adjust transition timings and values for the focused item
+      transitionDuration = 0.5;
+      transitionDelay = 0.2;
+      fontSize = '20px';
+      color = 'rgba(0,0,0,0.8)';
     } else {
       item.style.color = '';
       item.style.fontSize = '';
@@ -65,7 +76,7 @@ function handleScroll() {
   });
 
   if (window.scrollY >= listItems[0].offsetTop - viewportHeight * 0.8) {
-    ol.style.backgroundColor = 'darkslateblue';
+    ol.style.backgroundColor = '#b0c4de';
     ol.style.borderRadius = '10px';
     ol.style.padding = '20px';
     ol.style.transition = 'background-color 0.5s ease-in-out';
