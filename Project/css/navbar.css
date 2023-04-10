@@ -20,6 +20,10 @@
 }
 
 nav {
+    position: sticky;
+    z-index: 9999;
+    background-color: var(--background-color);
+    top: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -29,8 +33,6 @@ nav {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border: 0.1px solid #c7f9cc;
     border-radius: 40px;
-    top: 0;
-    left: 0;
   }
 
   body.active {
@@ -208,22 +210,7 @@ nav {
   animation: navLinkFade 0.5s ease-in-out forwards;
 }
 
-@keyframes grow-background {
-  from {
-    transform: scale(0);
-    opacity: 1;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-.toggle div {
-    background-color: var(--text-color-alt);
-
-}
-
+/* STYLING WHEN BURGER TOGGLED */
 .nav-links.active li {
     opacity: 0;
 }
@@ -250,6 +237,7 @@ nav {
     margin: 0 0.3rem;
 }
 
+/* ANIMATIONS WHEN BURGER TOGGLED */
 @keyframes navLinkFade {
     from {
         opacity: 0;
@@ -290,4 +278,20 @@ nav {
 
 .toggle .line3 {
     transform: translateY(-8px) rotate(-45deg);
+}
+
+@keyframes grow-background {
+  from {
+    transform: scale(0);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.toggle div {
+    background-color: var(--text-color-alt);
+
 }
