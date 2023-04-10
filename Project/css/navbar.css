@@ -49,11 +49,14 @@ nav {
 }
 .hide {
   opacity: 0;
+  display: none;
 }
 
 .show {
   opacity: 1;
+  display: block;
   z-index: 9999999;
+  cursor:default;
 }
 .dot {
     color: var(--accent-color-2);

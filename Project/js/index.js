@@ -5,7 +5,7 @@ function emoji_swapper() {
     setInterval(() => {
       const randomIndex = Math.floor(Math.random() * emojis.length);
       food_emoji.innerHTML = emojis[randomIndex];
-    }, 5000);
+    }, 2000);
   }
   
   emoji_swapper();
