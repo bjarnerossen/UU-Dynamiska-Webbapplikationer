@@ -91,15 +91,15 @@ img {
 
 :root {
     /* Accent colors */
-    --accent-color-1: #90ee90;/* green */
-    --accent-color-2: #c7f9cc; /* light green */
+    --accent-color-1: #90ee90;
+    --accent-color-2: #c7f9cc; 
 
     /* Background colors */
-    --background-color: #242423; /* white */
-    --background-color-alt: #F2F2F2; /* light grey */
+    --background-color: #242423; 
+    --background-color-alt: #F2F2F2; 
 
     /* Text colors */
-    --text-color: #FFFFFF; /* dark grey */
+    --text-color: #FFFFFF;
     --text-color-alt: #242423; 
 }
 
@@ -116,7 +116,6 @@ section {
   display: grid;
   align-items: center;
   align-content: center;
-  justify-items: center;
   min-height: 100vh;
   margin-left: 3rem;
   margin-right: 5rem;

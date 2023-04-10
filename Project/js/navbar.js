@@ -1,32 +1,15 @@
-// const logo = document.querySelector('.logo');
-// const dot = document.querySelector('.dot');
-// const foodEmojis = ['🍆', '🍅', '🥦', '🌶️', '🍠', '🥕', '🍄', '🥔', '🥬', '🍏', '🍇', '🍓', '🍌', '🍉', '🍊', '🥑', '🥥'];
-// let timeoutId;
-
-// logo.addEventListener('click', () => {
-//   const randomIndex = Math.floor(Math.random() * foodEmojis.length);
-//   const randomFoodEmoji = foodEmojis[randomIndex];
-//   dot.innerHTML = randomFoodEmoji;
-  
-//   // Reset the dot after 5 seconds
-//   clearTimeout(timeoutId);
-//   timeoutId = setTimeout(() => {
-//     dot.innerHTML = '&#x2022;';
-//   }, 5000);
-// });
-
-
-
 const navSlide = () => {
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('.nav-links');
     const navLinks = document.querySelectorAll('.nav-links li');
+    const navLogo = document.querySelector('.nav-logo');
     const body = document.body;
 
     burger.addEventListener('click', () => {
         //Toggle Nav
         nav.classList.toggle('nav-active');
         body.classList.toggle('active');
+        navLogo.classList.toggle('show');
         
         //Animate Links
         navLinks.forEach((link, index) => {

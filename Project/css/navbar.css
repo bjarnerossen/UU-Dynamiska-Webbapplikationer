@@ -1,171 +1,165 @@
-
 :root {
-    /* Primary colors */
-    --primary-color: #1A1A1A; /* dark grey */
-    --secondary-color: #EFEFEF; /* light grey */
+  /* Accent colors */
+  --accent-color-1: #90ee90;
+  --accent-color-2: #c7f9cc; 
 
-    /* Accent colors */
-    --accent-color-1: #90ee90;/* green */
-    --accent-color-2: #c7f9cc; /* light green */
+  /* Background colors */
+  --background-color: #242423; 
+  --background-color-alt: #F2F2F2; 
 
-    /* Background colors */
-    --background-color: #242423; /* white */
-    --background-color-alt: #F2F2F2; /* light grey */
-
-    /* Text colors */
-    --text-color: #1A1A1A; /* dark grey */
-    --text-color-light: #666666; /* light grey */
-    --text-color-alt: #FFFFFF; /* white */
-
+  /* Text colors */
+  --text-color: #FFFFFF;
+  --text-color-alt: #242423; 
 }
 
+/* GENERAL STYLING FOR THE NAVBAR */
 nav {
     position: sticky;
     z-index: 9999;
     background-color: var(--background-color);
     top: 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    padding: 0 5%;
     margin-top: 1rem;
     max-width: 100%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border: 0.1px solid #c7f9cc;
-    border-radius: 40px;
-  }
+    border-radius: 30px;
+}
 
-  body.active {
-    overflow: hidden;
-  }
-  
-  .dot {
+/* ADDITIONAL STYLING FOR LOGO OTHER THAN DEFAULT */
+.logo {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  cursor: pointer;
+  text-transform: uppercase;
+  border-bottom: none;
+}
+
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--text-color-alt);
+  cursor: pointer;
+  text-transform: uppercase;
+  border-bottom: solid 5px var(--text-color-alt);
+}
+.hide {
+  opacity: 0;
+}
+
+.show {
+  opacity: 1;
+  z-index: 9999999;
+}
+.dot {
     color: var(--accent-color-2);
 }
 
-  .logo {
-    font-size: 2rem;
-    color: var(--text-color-alt);
-    cursor: pointer;
-    text-transform: uppercase;
-  }
-  
-  .nav-links {
+
+/* LINK STYLES */
+.nav-links {
     display: flex;
     justify-content: space-between;
     width: 40%;
-  }
-  
-  .nav-links li {
-    list-style: none;
-  }
-  
-  .nav-link {
+} 
+.nav-link {
     text-decoration: none;
-    color: var(--text-color-alt);
+    color: var(--text-color);
     font-weight: bold;
     font-size: 1.2rem;
     margin: 0 1rem;
-    transition: all 0.3s ease 0s;
-  }
+    transition: all 0.4s;
+}
 
-  .nav-link:hover {
-    color: var(--text-color);
-    background-color: var(--background-color-alt);
-    border-bottom: var(--accent-color-2);
-    border-radius: 2.1rem;
-    padding: 1.5rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
+/* if nav-link is not active and hovered - apply the following styling */
 .nav-link:not(.active):hover {
-    color: var(--text-color);
-    background-color: var(--background-color-alt);
-    border-bottom: var(--accent-color-2);
+    color: var(--text-color-alt);
+    background-color: var(--accent-color-2);
     border-radius: 2.1rem;
-    padding: 1.5rem;
+    padding: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
+/* styling for the active nav-link */
 .nav-link.active {
-    color: var(--text-color);
-    background-color: var(--background-color-alt);
-    border-bottom: var(--accent-color-2);
-    border-radius: 2.1rem;
-    padding: 1.5rem;
-    cursor: pointer;
+  color: var(--text-color-alt);
+  background-color: var(--accent-color-2);
+  border-radius: 2.1rem;
+  padding: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.nav-active .logo {
-  display: block;
-  font-size: 2rem;
-  color: #1A1A1A;
-}
-
+/* STYLING FOR BURGER MENU / BUTTON */ 
+/* styling burger */
 .burger {
     display: none;
     background-color: var(--accent-color-2);
     padding: 0.5rem;
     border-radius: 30%;
     border: solid var(--accent-color-2);
-  }
-  
-  .burger div{
+}
+
+/* styling burger lines */
+.burger div{
     width: 25px;
     height: 3px;
-    background-color: var(--text-color);
+    background-color: var(--text-color-alt);
     margin: 5px;
     transition: all 0.3s ease;
 }
 
+/* MEDIA QUERIES FOR THE BURGER MENU */
 @media screen and (max-width: 1024px) {
     .nav-links {
         width: 60%;
     } 
 }
 
-@media screen and (max-width: 760px) {
-  .nav-links .active .logo {
-    display: block;
-    font-size: 2rem;
-    color: #1A1A1A;
-    margin-bottom: 1rem;
-  }
-
-.nav-links {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: var(--background-color);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        z-index: 1;
-        transform: translateX(-100%);
-    }
-    
-
-    .nav-links.active {
-        transform: translateX(0%);
-      }
-      
-
-  .burger {
-        display: inline-block;
-        z-index: 40;
-    }
-
-    .logo {
-      font-size: 1rem;
-      order: 3;
-    }
+/* display logo and nav-links for all screens under 760px */
+@media screen and (max-width: 1024px) {
+.nav-links .active .logo {
+  display: block;
 }
 
+.nav-links {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  transform: translateX(-100%);
+}
+
+.burger {
+  display: inline-block;
+  z-index: 40;
+}
+
+.logo {
+  font-size: 1.5rem;
+  order: 3;
+    }
+
+.nav-link {
+  font-size: 3rem;
+  color: var(--text-color-alt);
+
+}
+}
+
+
+/* STYLING WHEN BURGER TOGGLED */
+/* styling of nav-links in the nav-menu once toggled */
 .nav-active {
     margin-top: 0;
     position: fixed;
@@ -188,53 +182,54 @@ nav {
     font-size: 5rem;
 }
 
+/* position of the toggle button: upper right corner */
 .toggle {
   position: fixed;
-  top: 54px;
-  right: 54px;
+  top: 20px;
+  right: 20px;
   display: block;
   z-index: 1;
   border: none;
   background-color: var(--background-color);
 }
 
-.nav-active:before {
-  content: "";
-  position: absolute;
+.nav-active {
+  font-size: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  text-align: left;
+  transform: translateX(0%);
+  background-color: var(--accent-color-2);
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  background-color: var(--accent-color-2);
-  animation: navLinkFade 0.5s ease-in-out forwards;
+  right: 0;
+  bottom: 0;
 }
 
-/* STYLING WHEN BURGER TOGGLED */
-.nav-links.active li {
-    opacity: 0;
+.nav-active .nav-link {
+  font-size: 3rem;
+  color: var(--text-color-alt);
 }
 
-.nav-active {
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    text-align: left;
-    transform: translateX(0%);
-    background-color: var(--accent-color-2);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+/* styling for the navlinks when the burger is toggled */
+.nav-active .nav-link:not(.active):hover {
+  color: var(--text-color);
+  background-color: var(--background-color);
+  border-radius: 2.1rem;
+  padding: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
-
-.nav-active li a {
-    text-decoration: none;
-    color: var(--text-color);
-    font-weight: bold;
-    font-size: 3rem;
-    margin: 0 0.3rem;
+.nav-active .nav-link.active {
+color: var(--text-color);
+background-color: var(--background-color);
+border-radius: 2.1rem;
+padding: 1rem;
+cursor: pointer;
+transition: background-color 0.3s ease;
 }
 
 /* ANIMATIONS WHEN BURGER TOGGLED */
@@ -249,24 +244,11 @@ nav {
     }
 }
 
-@keyframes grow-background {
-    0% {
-      border-radius: 90%;
-      width: 0;
-      height: 0;
-      margin: 0;
-      background-color: var(--accent-color-2);
-      transform: translate(54px, -54px);
-    }
-    100% {
-      border-radius: 0%;
-      width: 100%;
-      height: 100%;
-      margin: 0;
-      background-color: var(--accent-color-2);
-      transform: translate(0, 0);
-    }
-  }
+/* burger style when toggled */
+.toggle div {
+  background-color: var(--text-color);
+
+}
 
 .toggle .line1 {
     transform: translateY(8px) rotate(45deg);
@@ -278,20 +260,4 @@ nav {
 
 .toggle .line3 {
     transform: translateY(-8px) rotate(-45deg);
-}
-
-@keyframes grow-background {
-  from {
-    transform: scale(0);
-    opacity: 1;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-.toggle div {
-    background-color: var(--text-color-alt);
-
 }
