@@ -1,19 +1,19 @@
-const logo = document.querySelector('.logo');
-const dot = document.querySelector('.dot');
-const foodEmojis = ['🍆', '🍅', '🥦', '🌶️', '🍠', '🥕', '🍄', '🥔', '🥬', '🍏', '🍇', '🍓', '🍌', '🍉', '🍊', '🥑', '🥥'];
-let timeoutId;
+// const logo = document.querySelector('.logo');
+// const dot = document.querySelector('.dot');
+// const foodEmojis = ['🍆', '🍅', '🥦', '🌶️', '🍠', '🥕', '🍄', '🥔', '🥬', '🍏', '🍇', '🍓', '🍌', '🍉', '🍊', '🥑', '🥥'];
+// let timeoutId;
 
-logo.addEventListener('click', () => {
-  const randomIndex = Math.floor(Math.random() * foodEmojis.length);
-  const randomFoodEmoji = foodEmojis[randomIndex];
-  dot.innerHTML = randomFoodEmoji;
+// logo.addEventListener('click', () => {
+//   const randomIndex = Math.floor(Math.random() * foodEmojis.length);
+//   const randomFoodEmoji = foodEmojis[randomIndex];
+//   dot.innerHTML = randomFoodEmoji;
   
-  // Reset the dot after 5 seconds
-  clearTimeout(timeoutId);
-  timeoutId = setTimeout(() => {
-    dot.innerHTML = '&#x2022;';
-  }, 5000);
-});
+//   // Reset the dot after 5 seconds
+//   clearTimeout(timeoutId);
+//   timeoutId = setTimeout(() => {
+//     dot.innerHTML = '&#x2022;';
+//   }, 5000);
+// });
 
 
 

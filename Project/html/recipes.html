@@ -48,12 +48,12 @@
         </h2>
         <p>Create Your Grocery List with Ease!</p>
 
-        <div class="form-group">
+        <!-- <div class="form-group">
           <button id="toggle-form-btn" type="button">
             Filter<br /><i class="bi bi-filter-circle"></i>
           </button>
-        </div>
-        <form id="recipe-form" class="hidden">
+        </div> -->
+        <!-- <form id="recipe-form" class="hidden">
           <div class="form-group">
             <label for="diet">Diet:</label>
             <select id="diet" name="diet">
@@ -171,11 +171,63 @@
           <div class="form-group">
             <button type="submit" id="submit-btn">Filter</button>
           </div>
-        </form>
-        <section class="main-container">
-          <section class="recipes-content">
+        </form> -->
+
+        <div class="filter-section">
+          <div class="filter-widget">
+            <label>
+              <input type="checkbox" data-filter="vegetarian" onchange="recipeManager.updateFilters(event)">
+              <span class="emoji">🥕</span>
+              <span class="label-text">Vegetarian</span>
+            </label>
+          </div>
+          <div class="filter-widget">
+            <label>
+              <input type="checkbox" data-filter="vegan" onchange="recipeManager.updateFilters(event)">
+              <span class="emoji">🥦</span>
+              <span class="label-text">Vegan</span>
+            </label>
+          </div>
+          <div class="filter-widget">
+            <label>
+              <input type="checkbox" data-filter="glutenFree" onchange="recipeManager.updateFilters(event)">
+              <span class="emoji">🌾</span>
+              <span class="label-text">Gluten-free</span>
+            </label>
+          </div>
+          <div class="filter-widget">
+            <label>
+              <input type="checkbox" data-filter="dairyFree" onchange="recipeManager.updateFilters(event)">
+              <span class="emoji">🥛</span>
+              <span class="label-text">Dairy-free</span>
+            </label>
+          </div>
+          <div class="filter-widget">
+            <label>
+              <input type="checkbox" data-filter="veryHealthy" onchange="recipeManager.updateFilters(event)">
+              <span class="emoji">💪</span>
+              <span class="label-text">Very healthy</span>
+            </label>
+          </div>
+          <div class="filter-widget">
+            <label>
+              <input type="checkbox" data-filter="cheap" onchange="recipeManager.updateFilters(event)">
+              <span class="emoji">💰</span>
+              <span class="label-text">Cheap</span>
+            </label>
+          </div>
+          <div class="filter-widget">
+            <label>
+              <input type="checkbox" data-filter="veryPopular" onchange="recipeManager.updateFilters(event)">
+              <span class="emoji">🌟</span>
+              <span class="label-text">Very popular</span>
+            </label>
+          </div>
+        </div>
+        <hr>
+        <section class="recipes-content">
             <div class="center-container" id="recipe-list"></div>
-          </section>
+         </section>
       </div>
       <section>
         <div class="clipboard-container">

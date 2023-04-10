@@ -1,9 +1,5 @@
 
 :root {
-    /* Primary colors */
-    --primary-color: #1A1A1A; /* dark grey */
-    --secondary-color: #EFEFEF; /* light grey */
-
     /* Accent colors */
     --accent-color-1: #90ee90;/* green */
     --accent-color-2: #c7f9cc; /* light green */
@@ -13,24 +9,54 @@
     --background-color-alt: #F2F2F2; /* light grey */
 
     /* Text colors */
-    --text-color: #1A1A1A; /* dark grey */
-    --text-color-light: #666666; /* light grey */
-    --text-color-alt: #FFFFFF; /* white */
+    --text-color: #FFFFFF; /* dark grey */
 
 }
+
 
 body {
     font-family: 'Raleway', sans-serif;
     margin: 3rem 3rem 0 3rem;
     padding: 0;
+    color: var(--text-color);
     background-color: var(--background-color);
 }
 
+section {
+  display: grid;
+  align-items: center;
+  align-content: center;
+  min-height: 100vh;
+  margin-left: 3rem;
+  margin-right: 5rem;
+  line-break: strict;
+}
+
+h1 {
+  text-align: left;
+  text-transform: capitalize;
+  font-weight: 900;
+  font-size: 5rem;
+  border-bottom: solid var(--accent-color-2);
+}
+
+h2 {
+  text-align: right;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 2.5rem;
+}
+
+p {
+  text-align: left;
+  font-weight: 400;
+  font-size: 1.36rem;
+}
 
 
+/* 
 li, a, button {
-    text-decoration: none; 
-    list-style-type: none;
+
     font-weight: 900;
     text-transform:uppercase;
 }
@@ -48,4 +74,4 @@ li, a, button {
     font-size: 1.5rem;
     line-height: 1.5;
     text-align: left;
-  }
+  } */

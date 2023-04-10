@@ -101,9 +101,9 @@ nav {
   font-size: 2rem;
   color: #1A1A1A;
 }
-  .burger {
+
+.burger {
     display: none;
-    position: fixed;
     background-color: var(--accent-color-2);
     padding: 0.5rem;
     border-radius: 30%;
@@ -132,7 +132,7 @@ nav {
     margin-bottom: 1rem;
   }
 
-    .nav-links {
+.nav-links {
         position: fixed;
         top: 0;
         left: 0;
@@ -153,8 +153,8 @@ nav {
       }
       
 
-    .burger {
-        display:block;
+  .burger {
+        display: inline-block;
         z-index: 40;
     }
 

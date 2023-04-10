@@ -57,8 +57,110 @@ p {
     color: var(--text-color-alt);
   }
   
+  hr {
+    border: none;
+    border-top: 2px solid #ccc;
+    margin: 20px 0;
+  }
+  
+
 /* Recipe Filter Form Styles */
-.hidden {
+.filter-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .filter-widget {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: #fff;
+    border-radius: 1.5rem;
+    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.2s ease-in-out;
+  }
+  
+  .filter-widget:hover .emoji {
+    transform: scale(1.2);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .emoji {
+    display: inline-block;
+    font-size: 28px;
+    margin-right: 10px;
+    transform-origin: center;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .label-text {
+    display: inline-block;
+    font-size: 16px;
+    color: #777;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .filter-widget:hover .label-text {
+    color: #555;
+  }
+  
+  .filter-widget label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+  }
+  
+  .filter-widget input[type="checkbox"] {
+    position: relative;
+    appearance: none;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 0.25rem;
+    background-color: #ddd;
+    cursor: pointer;
+  }
+  
+  .filter-widget input[type="checkbox"]::before {
+    content: "";
+    position: absolute;
+    top: 0.25rem;
+    left: 0.25rem;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 0.15rem;
+    background-color: transparent;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .filter-widget input[type="checkbox"]:checked::before {
+    background-color: var(--accent-color-2);
+  }
+  
+  .filter-widget .emoji {
+    font-size: 1.5rem;
+  }
+  
+  .filter-widget .label-text {
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .filter-section {
+      justify-content: center;
+    }
+    
+    .filter-widget {
+      max-width: 12rem;
+    }
+  }
+  
+
+/* .hidden {
     display: none;
 }
 
@@ -91,10 +193,10 @@ form:not(button) {
 
   .fade-in {
     opacity: 1 !important; /* override the opacity property set by the hidden class */
-    transition: opacity 2s ease-in-out;
-  }
+    /* transition: opacity 2s ease-in-out;
+  } */
   
-.form-group {
+/* .form-group {
     margin-right: 2rem;
     width: 100%;
   }
@@ -108,7 +210,6 @@ form:not(button) {
     right: 1rem;
     background-color: transparent;
     z-index: 9999; /* Ensure the button is on top of other content */
-  }
   
 #toggle-form-btn .bi-filter-circle {
     font-size: 2rem;
@@ -216,30 +317,27 @@ form:not(button) {
   .form-group select:focus,
   .form-group input:focus {
     border: 2px solid var(--background-color);
-  }
+  } */
   
-  
+   */
 
 /* Recipe Container & Card styles */
-.recipes-content {
+section .recipes-content {
     margin-top: 2rem;
-    background-color: transparent;
+    background-color: var(--background-color-alt);
     padding: 40px 20px;
     width: 70%;
     border-radius: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
   }
   
   .center-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
     margin-top: 40px;
   }
   
   .recipe {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     margin-bottom: 2rem;
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
     background-color: var(--background-color-alt);
