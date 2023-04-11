@@ -39,28 +39,6 @@ class RecipeManager {
           const recipeCard = document.createElement('div');
           recipeCard.classList.add('recipe-card');
 
-          // Create a div for the min label
-          // const readyInMinutesContainer = document.createElement('div');
-          // readyInMinutesContainer.classList.add('ready-in-minutes-container');
-
-          // const readyInMinutesSubContainer = document.createElement('div');
-          // readyInMinutesSubContainer.classList.add('ready-in-minutes-sub-container');
-
-          // const minNumber = document.createElement('h3');
-          // minNumber.classList.add('min-number');
-          // minNumber.textContent = `${recipeDetails.readyInMinutes}`;
-
-          // const min = document.createElement('span');
-          // min.classList.add('min');
-          // min.textContent = 'MINS'
-
-          // readyInMinutesSubContainer.appendChild(minNumber);
-          // readyInMinutesSubContainer.appendChild(min);
-
-          // readyInMinutesContainer.appendChild(readyInMinutesSubContainer);
-          // recipeCard.appendChild(readyInMinutesContainer);
-          
-
           // Create an image element and set its attributes
           const imageElement = document.createElement('img');
           imageElement.src = recipeDetails.image;
@@ -70,10 +48,16 @@ class RecipeManager {
           // Append the image element to the recipe element
           recipeCard.appendChild(imageElement);
 
-
-          // Get the recipes labels and their container and append to the recipe element
-          const labelContainer = this.getLabels(recipeDetails);
-          recipeCard.appendChild(labelContainer);
+          // Create a div for the min label
+          if (recipeDetails.readyInMinutes > 60) {
+            var readyInMinutes = recipeDetails.readyInMinutes;
+            var readyInHours = Math.floor(readyInMinutes / 60); // convert minutes to hours, rounded down
+            var remainderInMinutes = readyInMinutes % 60; // calculate remainder in minutes
+            console.log(`${recipeDetails.title} is ready in: ${readyInHours}h ${remainderInMinutes}min`);
+          } else {
+            var readyInMinutes = recipeDetails.readyInMinutes;
+            console.log(`${recipeDetails.title} is ready in ${readyInMinutes}min`)
+          }
 
           // Create a new h3 element and set its content to the recipes title
           const titleElement = document.createElement('h3');
@@ -81,6 +65,12 @@ class RecipeManager {
 
           // Append the title to the recipeElement
           recipeCard.appendChild(titleElement);
+
+          // ADD INGREDIENTS HERE
+
+          // Get the recipes labels and their container and append to the recipe element
+          const labelContainer = this.getLabels(recipeDetails);
+          recipeCard.appendChild(labelContainer);
 
           const buttonContainer = document.createElement('div');
           buttonContainer.classList.add('button-container');
