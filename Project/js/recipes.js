@@ -148,12 +148,15 @@ class RecipeManager {
     // Return the label container
     return labelContainer;
   }
+
+  filterItems() {
+
+  }
   
 
 }
 
 manageRecipes = new RecipeManager("recipe-list");
-manageRecipes.fetchRecipes();
 
 
 // function fetchRecipes() {

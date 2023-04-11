@@ -1,82 +1,30 @@
 :root {
-    /* Primary colors */
-    --primary-color: #1A1A1A; /* dark grey */
-    --secondary-color: #EFEFEF; /* light grey */
+  /* Accent colors */
+  --accent-color-1: #90ee90;
+  --accent-color-2: #c7f9cc; 
 
-    /* Accent colors */
-    --accent-color-1: #90ee90;/* green */
-    --accent-color-2: #c7f9cc; /* light green */
+  /* Background colors */
+  --background-color: #242423; 
+  --background-color-alt: #F2F2F2; 
 
-    /* Background colors */
-    --background-color: #242423; /* white */
-    --background-color-alt: #F2F2F2; /* light grey */
-
-    /* Text colors */
-    --text-color: #1A1A1A; /* dark grey */
-    --text-color-light: #666666; /* light grey */
-    --text-color-alt: #FFFFFF; /* white */
-
+  /* Text colors */
+  --text-color: #FFFFFF;
+  --text-color-alt: #242423; 
 }
 
-body {
-    font-family: 'Raleway', sans-serif;
-    margin: 4rem 4rem 0 4rem;
-    padding: 0;
-    background-color: var(--background-color);
-} 
-
-.container {
-    display: flex;
-    flex-direction: column;
-  }
-  
-.container > h2,
-.container > p {
-    margin-top: 0;
-  }
-
-.main-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-h2 {
-    text-transform: uppercase;
-    text-align: left;
-    font-size: 4rem;
-    margin-bottom: 0;
-    color: var(--text-color-alt);
-  }
-
-p {
-    font-size: 1.5rem;
-    margin-bottom: 0;
-    line-height: 1.5;
-    text-align: left;
-    color: var(--text-color-alt);
-  }
-  
-  hr {
-    border: none;
-    border-top: 2px solid #ccc;
-    margin: 20px 0;
-  }
-  
-
 /* Recipe Filter Form Styles */
-.filter-section {
+.filter-container {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
     margin-top: 1rem;
   }
   
-  .filter-widget {
+.filter-widget {
     display: flex;
     align-items: center;
     padding: 0.5rem 1rem;
-    background-color: #fff;
+    background-color: var(--background-color-alt);
     border-radius: 1.5rem;
     box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.2s ease-in-out;
