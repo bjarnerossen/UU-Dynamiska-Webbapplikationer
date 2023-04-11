@@ -1,3 +1,4 @@
+// Function to toggle the navbar
 const navSlide = () => {
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('.nav-links');
@@ -42,4 +43,21 @@ navLinks.forEach(link => {
       activeLink.classList.add('active');
     }
   });
+});
+
+// LITTLE EASTER EGG 🐣🌝
+const logo = document.querySelector('.logo');
+const logoDot = document.querySelector('.dot');
+
+// change the dot inner html to the guru on hover
+logo.addEventListener('mouseover', () => {
+  logoDot.innerHTML = '🧙‍♀️';
+  logoDot.style.transition = '0.5s ease-in-out'; // Adding smooth transition effect
+});
+
+// change the dot inner html to the initial state, set timer for 5sec on mouseout
+logo.addEventListener('mouseout', () => {
+  setTimeout(() => {
+    logoDot.innerHTML = '&#x2022;';
+  }, 5000);
 });

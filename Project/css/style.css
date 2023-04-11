@@ -112,13 +112,29 @@ body {
   background-color: var(--background-color);
 }
 
+article {
+  display: grid;
+  align-items: center;
+  align-content: center;
+  min-height: 100vh;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  line-break: strict;
+}
+
+/* in case section is wrapped in article */
+article > section {
+  min-height: 100vh;
+  margin: 0;
+}
+
 section {
   display: grid;
   align-items: center;
   align-content: center;
   min-height: 100vh;
   margin-left: 3rem;
-  margin-right: 5rem;
+  margin-right: 3rem;
   line-break: strict;
 }
 
@@ -127,6 +143,7 @@ h1 {
   text-transform: uppercase;
   font-weight: 900;
   font-size: 5rem;
+  margin-bottom: 1rem;
   border-bottom: solid var(--accent-color-2);
 }
 
@@ -150,6 +167,10 @@ p {
   font-size: 1.5rem;
 }
 
+a {
+  text-transform: uppercase;
+}
+
 button {
   background-color: var(--background-color-alt);
   color: var(--text-color-alt);
@@ -169,13 +190,22 @@ button:hover {
   border-radius: 12px;
 }
 
-
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: none;
+  padding: 0.8px;
+  background-color: var(--accent-color-2);
+}
 
 /* Small screens (up to 599px) */
 @media screen and (max-width: 599px) {
-  section {
+  article {
     margin-left: 1rem;
     margin-right: 1rem;
+  }
+  article > section, h1, h2, h3, p, hr {
+    margin-right: 4rem;
   }
 }
 
@@ -202,16 +232,22 @@ button:hover {
 
 /* Large screens (960px to 1279px) */
 @media screen and (min-width: 960px) and (max-width: 1279px) {
-  section {
+  article {
     margin-left: 2rem;
     margin-right: 2rem;
+  }
+  article > section, h1, h2, h3, p, hr {
+    margin: 0;
   }
 }
 
 /* Extra-large screens (1280px and above) */
 @media screen and (min-width: 1280px) {
-  section {
+  article {
     margin-left: 3rem;
-    margin-right: 5rem;
+    margin-right: 3rem;
+  }
+  article > section, h1, h2, h3, p, hr {
+    margin: 0;
   }
 }

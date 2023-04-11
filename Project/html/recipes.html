@@ -42,10 +42,13 @@
   </head>
   <body>
     <main>
-      <article>
+      <article class="article-container">
         <h1>GET COOKIN' AND GROOVIN'🪩</h1>
         <h2>STEP 1️⃣</h2>
-        <p>Choose your dietry preferences and meal type</p>
+        <p>
+          Discover a world of culinary possibilities by choosing your dietary
+          preferences and meal type. Bon appétit awaits!😋
+        </p>
         <hr />
         <section class="filter-container">
           <div class="filter-widget">
@@ -100,18 +103,29 @@
           <button onclick="recipeManager.filterItems()">Filter</button>
         </section>
         <!--RECIPES ARE GENERATED IN THIS SECTION-->
-        <hr />
-        <h2>STEP 2️⃣</h2>
-        <p>pick your favorite dish</p>
-        <hr />
-        <section class="recipes-content">
-          <div class="center-container" id="recipe-list"></div>
+
+        <div class="headline-hidden">
+          <hr />
+          <h2>STEP 2️⃣</h2>
+          <p>
+            Indulge in a delightful dilemma of deliciousness as you pick your
+            all-time favorite dish. It's like being a kid in a candy store! 🍭
+          </p>
+          <hr />
+        </div>
+        <section>
+          <div class="recipes-content" id="recipes-content"></div>
         </section>
         <!--CLIPBOARD IS DISPLAYED IN THIS SECTION-->
-        <hr />
-        <h2>STEP 3️⃣</h2>
-        <p>pick your favorite dish</p>
-        <hr />
+        <div class="headline-hidden">
+          <hr />
+          <h2>Ta-da! 🎉</h2>
+          <p>
+            Your personalized grocery list is ready to help you conquer the
+            kitchen. Say goodbye to last-minute supermarket scrambles!
+          </p>
+          <hr />
+        </div>
         <section class="clipboard-container">
           <textarea
             id="clipboard"
@@ -121,7 +135,7 @@
         </section>
       </article>
     </main>
-    <!-- <script src="../js/recipes.js"></script> -->
+    <script src="../js/recipes.js"></script>
     <script src="../js/navbar.js"></script>
   </body>
 </html>

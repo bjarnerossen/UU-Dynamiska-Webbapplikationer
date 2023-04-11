@@ -37,6 +37,8 @@ nav {
   cursor: pointer;
   text-transform: uppercase;
   border-bottom: none;
+  margin-right: 0; /* neutralise style.css */
+  margin-bottom: 0; /* neutralise style.css */
 }
 
 .nav-logo {
