@@ -23,77 +23,115 @@ class RecipeManager {
       .then(response => response.json())
       .then(data => {
         this.recipes = data.results;
-        this.render();
+        // Loop through each recipe
+        this.recipes.forEach(recipe => {
+          // Make a GET request to the API for the recipe's details
+          fetch(`${this.API_ENDPOINT}${recipe.id}/information?includeNutrition=false&apiKey=${this.API_KEY}`)
+          .then(response => response.json())
+          .then(recipeDetails => {
+            recipe.recipeDetails = recipeDetails;
+          })
+        })
       });
   }
 
-  render() {
-    // Loop through each recipe
-    this.recipes.forEach(recipe => {
-      // Make a GET request to the API for the recipe's details
-      fetch(`${this.API_ENDPOINT}${recipe.id}/information?includeNutrition=false&apiKey=${this.API_KEY}`)
-        .then(response => response.json())
-        .then(recipeDetails => {
-          
-          // Create a new div for the recipe
-          const recipeCard = document.createElement('div');
-          recipeCard.classList.add('recipe-card');
+  render(recipeList) {
+          recipeList.forEach(recipe => {
+            const recipeDetails = recipe.recipeDetails;
+            // Create a new div for the recipe
+            const recipeCard = document.createElement('div');
+            recipeCard.classList.add('recipe-card');
 
-          // Create an image element and set its attributes
-          const imageElement = document.createElement('img');
-          imageElement.src = recipeDetails.image;
-          imageElement.classList.add('recipe-img');
-          imageElement.setAttribute('alt', recipeDetails.tile); // setting alt tag to recipe title
+            // Create an image element and set its attributes
+            const imageElement = document.createElement('img');
+            imageElement.src = recipeDetails.image;
+            imageElement.classList.add('recipe-img');
+            imageElement.setAttribute('alt', recipeDetails.tile); // setting alt tag to recipe title
 
-          // Append the image element to the recipe element
-          recipeCard.appendChild(imageElement);
+            // Append the image element to the recipe element
+            recipeCard.appendChild(imageElement);
 
-          // Create a div for the min label
-          if (recipeDetails.readyInMinutes > 60) {
-            var readyInMinutes = recipeDetails.readyInMinutes;
-            var readyInHours = Math.floor(readyInMinutes / 60); // convert minutes to hours, rounded down
-            var remainderInMinutes = readyInMinutes % 60; // calculate remainder in minutes
-            console.log(`${recipeDetails.title} is ready in: ${readyInHours}h ${remainderInMinutes}min`);
-          } else {
-            var readyInMinutes = recipeDetails.readyInMinutes;
-            console.log(`${recipeDetails.title} is ready in ${readyInMinutes}min`)
-          }
+            // Create a new h3 element and set its content to the recipes title
+            const titleElement = document.createElement('h3');
+            titleElement.textContent = recipeDetails.title;
 
-          // Create a new h3 element and set its content to the recipes title
-          const titleElement = document.createElement('h3');
-          titleElement.textContent = recipeDetails.title;
+            // Append the title to the recipeElement
+            recipeCard.appendChild(titleElement);
 
-          // Append the title to the recipeElement
-          recipeCard.appendChild(titleElement);
+            // Create span element for the recipe infos
+            const recipeInfos = document.createElement('div');
+            recipeInfos.classList.add('recipe-infos');
 
-          // ADD INGREDIENTS HERE
+            const readyInMinutesNum = document.createElement('span');
+            const readyInMinutesText = document.createElement('span');
+            readyInMinutesText.classList.add('info-label');
 
-          // Get the recipes labels and their container and append to the recipe element
-          const labelContainer = this.getLabels(recipeDetails);
-          recipeCard.appendChild(labelContainer);
+            // determine whether or not minutes or hours should be displayed
+            if (recipeDetails.readyInMinutes > 60) {
+              var readyInMinutes = recipeDetails.readyInMinutes;
+              var readyInHours = Math.floor(readyInMinutes / 60); // convert minutes to hours, rounded down
+              readyInMinutesNum.textContent = `${readyInHours}`;
+              readyInMinutesText.textContent = 'h';
+            } else {
+              var readyInMinutes = recipeDetails.readyInMinutes;
+              readyInMinutesNum.textContent = `${readyInMinutes}`;
+              readyInMinutesText.textContent = 'Min';
+            }
 
-          const buttonContainer = document.createElement('div');
-          buttonContainer.classList.add('button-container');
+            // Append according text to number
+            readyInMinutesNum.appendChild(readyInMinutesText);
 
-          // Create buttons
-          const addButton = document.createElement('button');
-          const viewButton = document.createElement('button');
-          
-          // Add classes to buttons
-          addButton.classList.add('add-button');
-          viewButton.classList.add('view-button');
-          
-          // Append buttons to button container
-          buttonContainer.appendChild(addButton);
-          buttonContainer.appendChild(viewButton);
-          
-          // Append button container to recipe element
-          recipeCard.appendChild(buttonContainer);
+            const servingsNum = document.createElement('span');
+            const servingsText = document.createElement('span');
+            servingsText.classList.add('info-label');
 
-          // Appent the recipeElement to the container including all recipe cards
-          this.container.appendChild(recipeCard);
-        });
-    });
+            servingsNum.textContent = `${recipeDetails.servings}`;
+            servingsText.textContent = 'Servings';
+
+            servingsNum.appendChild(servingsText);
+
+            // Append 'label' to container
+            recipeInfos.appendChild(readyInMinutesNum);
+            recipeInfos.appendChild(servingsNum);
+
+            recipeCard.appendChild(recipeInfos);
+            // ADD INGREDIENTS HERE
+
+            // Get the recipes labels and their container and append to the recipe element
+            const labelContainer = this.getLabels(recipeDetails);
+            recipeCard.appendChild(labelContainer);
+
+            // const buttonContainer = document.createElement('div');
+            // buttonContainer.classList.add('button-container');
+
+            // Create buttons
+            const addButton = document.createElement('button');
+            addButton.textContent = 'Add';
+            const viewButton = document.createElement('button');
+            viewButton.textContent = 'View Details';
+            
+            // Add classes to buttons
+            addButton.classList.add('add-button');
+            viewButton.classList.add('view-button');
+            
+            // Append buttons to button container
+            // buttonContainer.appendChild(addButton);
+            // buttonContainer.appendChild(viewButton);
+            
+            // Append button container to recipe element
+            recipeCard.appendChild(addButton);
+
+            /* on click of the addButton the ingredients for the recipe should be added to the clipboard*/
+            addButton.addEventListener('click', () => {
+              const clipboard = document.getElementById('clipboard');
+              console.log(recipeDetails.extendedIngredients);
+              // clipboard.innerText = `${recipeDetails.}`
+            })
+            // recipeCard.appendChild(viewButton);
+
+            // Appent the recipeElement to the container including all recipe cards
+            this.container.appendChild(recipeCard);
+          });
   }
   getLabels(recipeDetails) {
     // Create an empty label container
@@ -169,6 +207,7 @@ class RecipeManager {
 
 manageRecipes = new RecipeManager();
 manageRecipes.fetchRecipes();
+manageRecipes.render(this.recipes);
 
 ///////////CLIPBOARD CODE/////////////////
 function copyToClipboard() {
@@ -207,9 +246,3 @@ function copyToClipboard() {
 const copyButton = document.getElementById("copy-button");
 copyButton.addEventListener("click", copyToClipboard);
 
-
-// Recipe-card zoom in effect
-// const recipeCard = document.querySelector('.recipe-card');
-// recipeCard.addEventListener('click', () => {
-//   recipeCard.classList.toggle('open');
-// })
