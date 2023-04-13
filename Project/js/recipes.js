@@ -35,11 +35,16 @@ class RecipeManager {
       });
   }
 
-  render(recipeList) {
-          recipeList.forEach(recipe => {
+  render(recipes) {
+          recipes.forEach(recipe => {
             const recipeDetails = recipe.recipeDetails;
             // Create a new div for the recipe
             const recipeCard = document.createElement('div');
+            recipeCard.addEventListener('click', () => {
+              const ingredientList = document.querySelector('.ingredient-list');
+              ingredientList.classList.remove('ingredients-hidden');
+              ingredientList.classList.toggle('ingredients-shown');
+            })
             recipeCard.classList.add('recipe-card');
 
             // Create an image element and set its attributes
@@ -95,7 +100,35 @@ class RecipeManager {
             recipeInfos.appendChild(servingsNum);
 
             recipeCard.appendChild(recipeInfos);
+
             // ADD INGREDIENTS HERE
+            // Create an unordered list to append ingredients to
+            const ingredientList = document.createElement('ul');
+            ingredientList.classList.add('ingredient-list','ingredients-hidden');
+            // Loop over each ingredient to get the name and right measurement
+            recipeDetails.extendedIngredients.forEach(ingredient => {
+              // Create li element to store ingredient information
+              const ingredientItem = document.createElement('li');
+              ingredientItem.classList.add('ingredient');
+              // Store ingredient name in a span
+              const ingredientName = document.createElement('span');
+              ingredientName.classList.add('ingredient-name');
+              ingredientName.innerText = `${ingredient.name}`;
+              // Store ingredient quantity in a span
+              const ingredientQty = document.createElement('span');
+              ingredientQty.classList.add('ingredient-qty');
+              ingredientQty.innerText = Math.round(ingredient.measures.metric.amount) + " " + ingredient.measures.metric.unitShort;
+
+              // Append ingredient name and qty to li-element
+              ingredientItem.appendChild(ingredientName);
+              ingredientItem.appendChild(ingredientQty);
+
+              // Append ingredient Item to ingredientList (ul)
+              ingredientList.appendChild(ingredientItem);
+            });
+
+            // Append ingredientList to the recipe card
+            recipeCard.appendChild(ingredientList);
 
             // Get the recipes labels and their container and append to the recipe element
             const labelContainer = this.getLabels(recipeDetails);
@@ -114,20 +147,9 @@ class RecipeManager {
             addButton.classList.add('add-button');
             viewButton.classList.add('view-button');
             
-            // Append buttons to button container
-            // buttonContainer.appendChild(addButton);
-            // buttonContainer.appendChild(viewButton);
             
             // Append button container to recipe element
             recipeCard.appendChild(addButton);
-
-            /* on click of the addButton the ingredients for the recipe should be added to the clipboard*/
-            addButton.addEventListener('click', () => {
-              const clipboard = document.getElementById('clipboard');
-              console.log(recipeDetails.extendedIngredients);
-              // clipboard.innerText = `${recipeDetails.}`
-            })
-            // recipeCard.appendChild(viewButton);
 
             // Appent the recipeElement to the container including all recipe cards
             this.container.appendChild(recipeCard);
@@ -207,7 +229,7 @@ class RecipeManager {
 
 manageRecipes = new RecipeManager();
 manageRecipes.fetchRecipes();
-manageRecipes.render(this.recipes);
+manageRecipes.render(manageRecipes.recipes);
 
 ///////////CLIPBOARD CODE/////////////////
 function copyToClipboard() {

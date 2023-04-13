@@ -121,12 +121,12 @@
 /* RECIPE CONTAINER AND CARD STYLES */
 .recipes-content {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-   flex-wrap: wrap;
-   gap: 1rem;
-   margin-top: 1rem;
+  flex-wrap: wrap;
+  gap: 5rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
   
 .center-container {
@@ -142,15 +142,11 @@
   width: 22rem;
   background-position:center;
   border-radius:10px;
-  transition: all 0.5s cubic-bezier(0.25, 0.1, 0.02, 2);
+  transition: all 0.5s cubic-bezier(0.25, 0.1, 0.02, 2); /* transition for the hover effect */
 }
 
 .recipe-card:hover {
     width: 25rem;
-}
-
-.recipe-card:hover img {
-  filter: blur(1);
 }
   
   
@@ -159,7 +155,7 @@
     width: 100%;
     height: 200px;
     object-fit: cover;
-  }
+}
 
 
 /* styling for the ready in min label */
@@ -181,8 +177,9 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  font-size: 30px;
+  font-size: 2rem;
   font-weight: bold;
+  margin-bottom: 1rem;
 }
 .recipe-infos span {
     display: flex;
@@ -191,20 +188,64 @@
     gap: .5rem;
     text-align: center;
 }
+
 .recipe-infos span:not(:last-child) {
       padding-right: 1rem;
-      border-right: 1px solid var(--grey-color);
-    }
+      border-right: 1px solid #d0cccc;
+}
 .recipe-infos  .info-label {
-    font-size: 12px;
+    font-size: 0.8rem;
     color: #d0cccc;
   }
+/* styling for ingredients */
+/* hide ingredients initially */
+.ingredients-hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+
+.ingredients-shown {
+  opacity: 1;
+  visibility:visible;
+}
+
+.ingredient-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 0.2rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.ingredient-list::before {
+  content: 'Ingredients';
+  font-weight: bold;
+}
+
+.ingredient::before {
+  content: '☑️ ';
+  font-size: 0.5rem;
+}
+
+.ingredient {
+  text-align: left;
+  width: 100%;
+  margin-left: 5rem;
+}
   /* styling for the dietry labels */
   .label-container {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: dashed black;
+    border-top: solid black;
   }
 
   .label {
