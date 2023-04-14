@@ -145,11 +145,6 @@
   border-radius:10px;
   transition: all 0.5s cubic-bezier(0.25, 0.1, 0.02, 2); /* transition for the hover effect */
 }
-
-.recipe-card:hover {
-    width: 25rem;
-}
-  
   
 /* styling for the image */
   .recipe-img {
@@ -206,15 +201,17 @@
   padding: 0.5rem;
   font-size: 1rem;
 }
+
 /* Styling for ingredients */
 /* Hide ingredients initially */
-.ingredients-hidden {
+.ingredient-list {
   display: none;
-  visibility: hidden;
-  transition: all 0.3s;
+  opacity: 0;
+  transition: opacity 1s;
 }
 
 .ingredients-shown {
+  opacity: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -224,6 +221,11 @@
   margin-bottom: 1rem;
   color: #333;
 }
+
+.ingredients-shown .recipe-card {
+  width: 25rem;
+}
+
 
 .ingredients-shown::before {
   content: 'Ingredients';

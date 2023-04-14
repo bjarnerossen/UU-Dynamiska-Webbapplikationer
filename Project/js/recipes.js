@@ -105,12 +105,15 @@ class RecipeManager {
             // Create button to toggle ingredient list 
             const ingredientsBtn = document.createElement('button');
             ingredientsBtn.classList.add('ingredients-button');
-            ingredientsBtn.textContent = 'Show Ingredients';
+            ingredientsBtn.textContent = 'Show Ingredients ↓';
 
             recipeCard.appendChild(ingredientsBtn);
 
             // toggle visibility of ingredient list on click
-            ingredientsBtn.addEventListener('click', () => this.recipeCard.toggle('ingredients-shown'));
+            ingredientsBtn.addEventListener('click', () => {
+              this.recipeCard.toggle('ingredients-shown');
+              ingredientsBtn.textContent = 'Hide Ingredients ↑';
+            });
 
             // Create an unordered list to append ingredients to
             const ingredientList = document.createElement('ul');
