@@ -51,7 +51,7 @@ class RecipeManager {
             const imageElement = document.createElement('img');
             imageElement.src = recipeDetails.image;
             imageElement.classList.add('recipe-img');
-            imageElement.setAttribute('alt', recipeDetails.tile); // setting alt tag to recipe title
+            imageElement.setAttribute('alt', recipeDetails.title); // setting alt tag to recipe title
 
             // Append the image element to the recipe element
             recipeCard.appendChild(imageElement);
@@ -102,6 +102,16 @@ class RecipeManager {
             recipeCard.appendChild(recipeInfos);
 
             // ADD INGREDIENTS HERE
+            // Create button to toggle ingredient list 
+            const ingredientsBtn = document.createElement('button');
+            ingredientsBtn.classList.add('ingredients-button');
+            ingredientsBtn.textContent = 'Show Ingredients';
+
+            recipeCard.appendChild(ingredientsBtn);
+
+            // toggle visibility of ingredient list on click
+            ingredientsBtn.addEventListener('click', () => this.recipeCard.toggle('ingredients-shown'));
+
             // Create an unordered list to append ingredients to
             const ingredientList = document.createElement('ul');
             ingredientList.classList.add('ingredient-list','ingredients-hidden');
@@ -267,4 +277,3 @@ function copyToClipboard() {
 
 const copyButton = document.getElementById("copy-button");
 copyButton.addEventListener("click", copyToClipboard);
-

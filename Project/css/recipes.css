@@ -43,6 +43,7 @@
     border-radius: 1.5rem;
     transition: box-shadow 0.2s ease-in-out;
     cursor: pointer;
+    width: auto;
   }
   
   /* emoji zoom transformation on hover over widget  */ 
@@ -197,20 +198,23 @@
     font-size: 0.8rem;
     color: #d0cccc;
   }
-/* styling for ingredients */
-/* hide ingredients initially */
+
+/* Styling for ingredients toggle button */
+.ingredients-button {
+  background-color: rgba(255, 186, 159, 0.735);
+  color: salmon;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+/* Styling for ingredients */
+/* Hide ingredients initially */
 .ingredients-hidden {
-  opacity: 0;
+  display: none;
   visibility: hidden;
   transition: all 0.3s;
 }
 
 .ingredients-shown {
-  opacity: 1;
-  visibility:visible;
-}
-
-.ingredient-list {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -221,17 +225,17 @@
   color: #333;
 }
 
-.ingredient-list::before {
+.ingredients-shown::before {
   content: 'Ingredients';
   font-weight: bold;
 }
 
-.ingredient::before {
+.ingredients-shown .ingredient::before {
   content: '☑️ ';
   font-size: 0.5rem;
 }
 
-.ingredient {
+.ingredients-shown .ingredient {
   text-align: left;
   width: 100%;
   margin-left: 5rem;
