@@ -12,6 +12,38 @@
   --text-color-alt: #242423; 
 }
 
+.headline-hidden p {
+  font-size: 2rem;
+  font-weight: 900;
+  text-align: center;
+  text-transform: uppercase;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  background-image: -webkit-linear-gradient(92deg, lightgreen, beige);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: hue 10s infinite linear;
+}
+
+@-webkit-keyframes hue {
+  from {
+    -webkit-filter: hue-rotate(0deg);
+  }
+  to {
+    -webkit-filter: hue-rotate(-360deg);
+  }
+}
+
+.custom-emoji {
+  /* Apply your custom styles here */
+  font-size: 24px; /* Example: set font size to 24 pixels */
+  color: red; /* Example: set text color to red */
+  /* Add any other styles you want to apply to the emoji */
+}
+
+
+
+
 /* RECIPE FILTER FORM STYLES */
 .filter-container {
     display: grid;
@@ -324,21 +356,20 @@
 
 /* Clipboard styles */
 .clipboard-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-    margin-top: 40px;
-    width: 30%;
-  }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+}
   
   #clipboard {
     font-family: "Raleway", sans-serif;
-    border: 1px solid #ccc;
     padding: 10px;
+    margin-top: 2rem;
     font-size: 16px;
+    width: 50%;
     resize: none;
-    height: 100vh;
-    width: 120px;
+    height: 400px;
     margin-bottom: 20px;
     border-radius: 30px;
   }

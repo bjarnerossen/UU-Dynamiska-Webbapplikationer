@@ -154,7 +154,10 @@ class RecipeManager {
 
             // Create buttons
             const addButton = document.createElement('button');
-            addButton.textContent = '➕ Add to grocery list';
+            const addIcon = document.createElement('i');
+            addIcon.classList.add('fa-solid', 'fa-plus');
+            addButton.appendChild(addIcon);
+            addButton.textContent = 'Add to grocery list';
             
             // Add classes to buttons
             addButton.classList.add('add-button');
