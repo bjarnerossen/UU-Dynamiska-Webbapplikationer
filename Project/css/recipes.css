@@ -5,7 +5,7 @@
 
   /* Background colors */
   --background-color: #242423; 
-  --background-color-alt: #F2F2F2; 
+  --background-color-alt: #ffffff; 
 
   /* Text colors */
   --text-color: #FFFFFF;
@@ -250,8 +250,7 @@
     justify-content: center;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    border-bottom: dashed black;
-    border-top: solid black;
+    background-color: white;
   }
 
   .label {

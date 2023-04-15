@@ -90,17 +90,17 @@ img {
 }
 
 :root {
-    /* Accent colors */
-    --accent-color-1: #90ee90;
-    --accent-color-2: #c7f9cc; 
+  /* Accent colors */
+  --accent-color-1: #90ee90;
+  --accent-color-2: #c7f9cc; 
 
-    /* Background colors */
-    --background-color: #242423; 
-    --background-color-alt: #F2F2F2; 
+  /* Background colors */
+  --background-color: #242423; 
+  --background-color-alt: #ffffff; 
 
-    /* Text colors */
-    --text-color: #FFFFFF;
-    --text-color-alt: #242423; 
+  /* Text colors */
+  --text-color: #FFFFFF;
+  --text-color-alt: #242423; 
 }
 
 
