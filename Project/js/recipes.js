@@ -40,11 +40,6 @@ class RecipeManager {
             const recipeDetails = recipe.recipeDetails;
             // Create a new div for the recipe
             const recipeCard = document.createElement('div');
-            recipeCard.addEventListener('click', () => {
-              const ingredientList = document.querySelector('.ingredient-list');
-              ingredientList.classList.remove('ingredients-hidden');
-              ingredientList.classList.toggle('ingredients-shown');
-            })
             recipeCard.classList.add('recipe-card');
 
             // Create an image element and set its attributes
@@ -104,6 +99,7 @@ class RecipeManager {
             // ADD INGREDIENTS HERE
             // Create button to toggle ingredient list 
             const ingredientsBtn = document.createElement('button');
+
             ingredientsBtn.classList.add('ingredients-button');
             ingredientsBtn.textContent = 'Show Ingredients ↓';
 
@@ -111,9 +107,15 @@ class RecipeManager {
 
             // toggle visibility of ingredient list on click
             ingredientsBtn.addEventListener('click', () => {
-              this.recipeCard.toggle('ingredients-shown');
-              ingredientsBtn.textContent = 'Hide Ingredients ↑';
+              const ingredientList = recipeCard.querySelector('.ingredient-list'); // Get the corresponding ingredientList element
+              ingredientList.classList.toggle('ingredients-shown'); // Toggle the class "ingredients-shown"
+              if (ingredientList.classList.contains('ingredients-shown')) {
+                ingredientsBtn.textContent = 'Hide Ingredients ↑'; // Update text content when ingredients are shown
+              } else {
+                ingredientsBtn.textContent = 'Show Ingredients ↓'; // Update text content when ingredients are hidden
+              }
             });
+
 
             // Create an unordered list to append ingredients to
             const ingredientList = document.createElement('ul');
@@ -126,7 +128,7 @@ class RecipeManager {
               // Store ingredient name in a span
               const ingredientName = document.createElement('span');
               ingredientName.classList.add('ingredient-name');
-              ingredientName.innerText = `${ingredient.name}`;
+              ingredientName.innerText = `${ingredient.name} `;
               // Store ingredient quantity in a span
               const ingredientQty = document.createElement('span');
               ingredientQty.classList.add('ingredient-qty');
@@ -152,13 +154,10 @@ class RecipeManager {
 
             // Create buttons
             const addButton = document.createElement('button');
-            addButton.textContent = 'Add';
-            const viewButton = document.createElement('button');
-            viewButton.textContent = 'View Details';
+            addButton.textContent = '➕ Add to grocery list';
             
             // Add classes to buttons
             addButton.classList.add('add-button');
-            viewButton.classList.add('view-button');
             
             
             // Append button container to recipe element
@@ -280,3 +279,4 @@ function copyToClipboard() {
 
 const copyButton = document.getElementById("copy-button");
 copyButton.addEventListener("click", copyToClipboard);
+
