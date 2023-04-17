@@ -33,26 +33,49 @@
     <link rel="stylesheet" type="text/css" href="../css/style.css" />
     <link rel="stylesheet" type="text/css" href="../css/navbar.css" />
     <link rel="stylesheet" type="text/css" href="../css/recipes.css" />
+    <link rel="stylesheet" type="text/css" href="../css/footer.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;900&display=swap"
       rel="stylesheet"
     />
-    <title>Grocery Guru - Index</title>
+    <title>Grocery Guru - Recipes</title>
   </head>
   <body>
     <main>
+      <nav>
+        <h1 class="logo">grocery <span class="dot">&#x2022;</span> guru</h1>
+        <ul class="nav-links">
+          <li class="nav-logo hide">grocery &#x2022; guru</li>
+          <li><a href="../html/index.html" class="nav-link">Home</a></li>
+          <li>
+            <a href="../html/recipes.html" class="nav-link active">Recipes</a>
+          </li>
+          <li><a href="../html/about.html" class="nav-link">About</a></li>
+        </ul>
+        <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+      </nav>
       <article class="article-container">
-        <h1>
-          GET COOKIN'<br />
-          AND GROOVIN'🪩
-        </h1>
-        <h2>STEP 1️⃣</h2>
-        <p>
-          Discover a world of culinary possibilities by choosing your dietary
-          preferences and meal type. Bon appétit awaits!😋
-        </p>
+        <section class="intro">
+          <h1>
+            GET COOKIN'<br />
+            AND GROOVIN'🪩
+          </h1>
+          <p>
+            Indulge in a delightful dilemma of deliciousness as you pick your
+            all-time favorite dish. It's like being a kid in a candy store!<span
+              class="custom-emoji"
+              >🍭</span
+            >
+          </p>
+          <button href=".filter-container">Get started</button>
+        </section>
+        <h2>STEP 1️</h2>
         <hr />
         <section class="filter-container">
           <div class="filter-widget">
@@ -106,33 +129,23 @@
           </div>
           <button onclick="recipeManager.filterItems()">Filter</button>
         </section>
-        <!--RECIPES ARE GENERATED IN THIS SECTION-->
-
-        <div class="headline-hidden">
-          <hr />
-          <h2>STEP 2️⃣</h2>
-          <p>
-            Indulge in a delightful dilemma of deliciousness as you pick your
-            all-time favorite dish. It's like being a kid in a candy store!<span
-              class="custom-emoji"
-              >🍭</span
-            >
-          </p>
+        <div>
+          <h2>STEP 2️</h2>
           <hr />
         </div>
-        <section>
+        <section class="recipes-section">
           <div class="recipes-content" id="recipes-content"></div>
+          <!--RECIPES ARE GENERATED IN THIS SECTION-->
         </section>
         <!--CLIPBOARD IS DISPLAYED IN THIS SECTION-->
-        <div class="headline-hidden">
-          <hr />
+        <div>
           <h2>Ta-da! 🎉</h2>
-          <p>
+          <!-- <p>
             <i class="fa-solid fa-quote-left"></i>
             Your personalized grocery list is ready to help you conquer the
             kitchen. Say goodbye to last-minute supermarket scrambles!
             <i class="fa-solid fa-quote-right"></i>
-          </p>
+          </p> -->
           <hr />
         </div>
         <section class="clipboard-container">
@@ -144,7 +157,21 @@
         </section>
       </article>
     </main>
+    <footer class="footer hidden">
+      <div class="footer-container">
+        <div class="footer-links">
+          <a href="#" class="footer-link">About Us</a>
+          <a href="#" class="footer-link">Contact Us</a>
+          <a href="#" class="footer-link">Privacy Policy</a>
+          <a href="#" class="footer-link">Terms of Use</a>
+        </div>
+        <p class="footer-text">
+          Copyright &copy; 2023 GROCERY &#x2022; GURU All rights reserved.
+        </p>
+      </div>
+    </footer>
     <script src="../js/recipes.js"></script>
     <script src="../js/navbar.js"></script>
+    <script src="../js/footer.js"></script>
   </body>
 </html>

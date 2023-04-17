@@ -11,39 +11,14 @@
   --text-color: #FFFFFF;
   --text-color-alt: #242423; 
 }
-
-.headline-hidden p {
-  font-size: 2rem;
-  font-weight: 900;
-  text-align: center;
-  text-transform: uppercase;
-  margin-left: 2rem;
-  margin-right: 2rem;
-  background-image: -webkit-linear-gradient(92deg, lightgreen, beige);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-animation: hue 10s infinite linear;
+.intro {
+  height: 100vh;
 }
 
-@-webkit-keyframes hue {
-  from {
-    -webkit-filter: hue-rotate(0deg);
-  }
-  to {
-    -webkit-filter: hue-rotate(-360deg);
-  }
+.intro button {
+  display: block;
+  margin:  0 auto;
 }
-
-.custom-emoji {
-  /* Apply your custom styles here */
-  font-size: 24px; /* Example: set font size to 24 pixels */
-  color: red; /* Example: set text color to red */
-  /* Add any other styles you want to apply to the emoji */
-}
-
-
-
-
 /* RECIPE FILTER FORM STYLES */
 .filter-container {
     display: grid;
