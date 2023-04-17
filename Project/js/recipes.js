@@ -282,13 +282,6 @@ function copyToClipboard() {
       copyButton.style.backgroundColor = 'var(--accent-color-1)';
       clipboardIcon.classList.remove("bi-clipboard");
       clipboardIcon.classList.add("bi-clipboard-check");
-      clipboardIcon.animate([
-        { transform: "scale(1)" },
-        { transform: "scale(1.3)" },
-        { transform: "scale(1)" }
-      ], {
-        duration: 1000
-      });
       setTimeout(() => {
         clipboardIcon.classList.remove("bi-clipboard-check");
         clipboardIcon.classList.add("bi-clipboard");
@@ -301,7 +294,6 @@ function copyToClipboard() {
       console.error("Failed to copy text: ", err);
     });
 }
-
 
 const copyButton = document.getElementById("copy-button");
 copyButton.addEventListener("click", copyToClipboard);
