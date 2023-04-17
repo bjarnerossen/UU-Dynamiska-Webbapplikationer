@@ -162,9 +162,34 @@ class RecipeManager {
             // Add classes to buttons
             addButton.classList.add('add-button');
             
-            
+      
             // Append button container to recipe element
             recipeCard.appendChild(addButton);
+
+            // Add ingredients to clipboard on click of add-button
+            addButton.addEventListener('click', () => {
+              const clipboard = document.getElementById('clipboard');
+              const ingredientsList = recipeDetails.extendedIngredients.map(ingredient => `${ingredient.name} ${Math.round(ingredient.measures.metric.amount)} ${ingredient.measures.metric.unitShort}`).join('\n');
+              
+              if (addButton.classList.contains('remove-button')) {
+                // If button has 'remove-button' class, remove ingredients from clipboard
+                const clipboardLines = clipboard.value.split('\n');
+                const updatedClipboard = clipboardLines.filter(line => !line.includes(recipeDetails.title) && !ingredientsList.includes(line)).join('\n');
+                clipboard.value = updatedClipboard;
+              } else {
+                // If button does not have 'remove-button' class, append recipe title and ingredients to clipboard
+                clipboard.value += '\n' + recipeDetails.title + '\n' + ingredientsList;
+              }
+            
+              addButton.classList.toggle('remove-button'); // Toggle the class "remove-button"
+              if (addButton.classList.contains('remove-button')) {
+                addButton.textContent = 'Remove from grocery list'; // Update text content when ingredients are shown
+              } else {
+                addButton.textContent = 'Add to grocery list'; // Update text content when ingredients are hidden
+              }
+            });
+            
+
 
             // Appent the recipeElement to the container including all recipe cards
             this.container.appendChild(recipeCard);
