@@ -106,7 +106,7 @@ img {
 
 body {
   font-family: 'Raleway', sans-serif;
-  margin: 5rem 5rem 0 5rem;
+  margin: 3rem 3rem 0 3rem;
   padding: 0;
   color: var(--text-color);
   background-color: var(--background-color);
@@ -161,7 +161,7 @@ h3 {
 }
 
 p {
-  text-align: left;
+  text-align:justify;
   font-weight: 400;
   font-size: 1.5rem;
   line-height: 2rem;
@@ -207,6 +207,7 @@ hr {
   article > section, h1, h2, h3, p, hr {
     margin-right: 4rem;
   }
+
 }
 
 /* Medium screens (600px to 959px) */
