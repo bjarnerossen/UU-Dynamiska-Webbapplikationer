@@ -277,33 +277,31 @@ function copyToClipboard() {
   navigator.clipboard.writeText(clipboardText)
     .then(() => {
       console.log("Text copied to clipboard");
-      const clipboardIcon = document.querySelector("#copy-button i");
       const copyButton = document.getElementById("copy-button");
-      const borderColor = "var(--accent-color-2)";
-      copyButton.style.color = borderColor;
-      copyButton.style.borderColor = borderColor;
+      const clipboardIcon = copyButton.querySelector("i");
+      copyButton.style.backgroundColor = 'var(--accent-color-1)';
       clipboardIcon.classList.remove("bi-clipboard");
       clipboardIcon.classList.add("bi-clipboard-check");
-      clipboardIcon.style.color = borderColor;
       clipboardIcon.animate([
         { transform: "scale(1)" },
         { transform: "scale(1.3)" },
         { transform: "scale(1)" }
       ], {
-        duration: 500
+        duration: 1000
       });
       setTimeout(() => {
         clipboardIcon.classList.remove("bi-clipboard-check");
         clipboardIcon.classList.add("bi-clipboard");
         clipboardIcon.style.color = "";
         copyButton.style.color = "";
-        copyButton.style.borderColor = "";
+        copyButton.style.backgroundColor = "";
       }, 3000);
     })
     .catch(err => {
       console.error("Failed to copy text: ", err);
     });
 }
+
 
 const copyButton = document.getElementById("copy-button");
 copyButton.addEventListener("click", copyToClipboard);
