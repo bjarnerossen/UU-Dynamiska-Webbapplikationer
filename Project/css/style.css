@@ -201,8 +201,8 @@ hr {
 /* Small screens (up to 599px) */
 @media screen and (max-width: 599px) {
   article {
-    margin-left: 1rem;
-    margin-right: 1rem;
+    margin-left: 0rem;
+    margin-right: 0rem;
   }
   article > section, h1, h2, h3, p, hr {
     margin-right: 4rem;
@@ -245,8 +245,8 @@ hr {
 /* Extra-large screens (1280px and above) */
 @media screen and (min-width: 1280px) {
   article {
-    margin-left: 3rem;
-    margin-right: 3rem;
+    margin-left: 20rem;
+    margin-right: 20rem;
   }
   article > section, h1, h2, h3, p, hr {
     margin: 0;
