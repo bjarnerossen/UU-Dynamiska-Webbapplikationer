@@ -11,9 +11,6 @@
   --text-color: #FFFFFF;
   --text-color-alt: #242423; 
 }
-.intro {
-  height: 100vh;
-}
 
 .intro button {
   display: block;
