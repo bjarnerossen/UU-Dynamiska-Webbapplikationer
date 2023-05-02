@@ -10,8 +10,8 @@ function emoji_swapper() {
   
   emoji_swapper();
 
-  const btn = document.querySelector('.index_btn');
+  const ctaButton = document.querySelector('.index_btn');
 
-  btn.addEventListener('click', () => {
+  ctaButton.addEventListener('click', () => {
     window.location.href = '../html/recipes.html';
   });

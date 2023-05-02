@@ -205,7 +205,9 @@ hr {
     margin-right: 0rem;
   }
   article > section, h1, h2, h3, p, hr {
-    margin-right: 4rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
   }
 
 }
@@ -229,6 +231,11 @@ hr {
     font-size: 1rem;
     padding: 0.6rem;
   }
+  article > section, h1, h2, h3, p, hr {
+    margin: 0;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+  }
 }
 
 /* Large screens (960px to 1279px) */
@@ -239,6 +246,8 @@ hr {
   }
   article > section, h1, h2, h3, p, hr {
     margin: 0;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
   }
 }
 
@@ -250,5 +259,7 @@ hr {
   }
   article > section, h1, h2, h3, p, hr {
     margin: 0;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
   }
 }
