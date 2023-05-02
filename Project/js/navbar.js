@@ -61,3 +61,8 @@ logo.addEventListener('mouseout', () => {
     logoDot.innerHTML = '&#x2022;';
   }, 5000);
 });
+
+// On click of the logo redirect the user to the home website
+logo.addEventListener('click', () => {
+  window.location.href = "../html/index.html";
+});
