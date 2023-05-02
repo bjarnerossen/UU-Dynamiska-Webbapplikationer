@@ -4,8 +4,14 @@ class RecipeManager {
     this.API_KEY = "be16d19e48ba4d008409e2fa56e7327d";
     this.container = document.getElementById('recipes-content');
     this.recipes = [];
-    this.filteredRecipes = [];
-    this.filters = {
+  }
+
+  fetchRecipes() {
+    // Setting number of recipes to 3 for the sake of the API-plan
+    const NUM_RECIPES = 3;
+
+    // getting values from the checkbox form
+    const filterParams = Object.entries({
       vegetarian: document.querySelector("input[data-filter='vegetarian']").checked,
       vegan: document.querySelector("input[data-filter='vegan']").checked,
       glutenFree: document.querySelector("input[data-filter='glutenFree']").checked,
@@ -13,25 +19,31 @@ class RecipeManager {
       veryHealthy: document.querySelector("input[data-filter='veryHealthy']").checked,
       cheap: document.querySelector("input[data-filter='cheap']").checked,
       veryPopular: document.querySelector("input[data-filter='veryPopular']").checked,
-    };
-  }
+    })
+      .filter(([_, value]) => value)
+      .map(([key, _]) => key)
+      .join("&");
 
-  fetchRecipes() {
-    const NUM_RECIPES = 3;
+    const url = `${this.API_ENDPOINT}complexSearch?type=lunch&${filterParams}&apiKey=${this.API_KEY}&number=${NUM_RECIPES}`;
 
-    fetch(`${this.API_ENDPOINT}complexSearch?&type=lunch&apiKey=${this.API_KEY}&number=${NUM_RECIPES}`)
+    fetch(url)
       .then(response => response.json())
       .then(data => {
         this.recipes = data.results;
-        // Loop through each recipe
-        this.recipes.forEach(recipe => {
-          // Make a GET request to the API for the recipe's details
-          fetch(`${this.API_ENDPOINT}${recipe.id}/information?includeNutrition=false&apiKey=${this.API_KEY}`)
-          .then(response => response.json())
-          .then(recipeDetails => {
-            recipe.recipeDetails = recipeDetails;
-          })
-        })
+        // Create an array to store promises that will fetch recipe details for each recipe
+        const recipePromises = this.recipes.map(recipe => {
+          return fetch(`${this.API_ENDPOINT}${recipe.id}/information?includeNutrition=false&apiKey=${this.API_KEY}`)
+            .then(response => response.json())
+            .then(recipeDetails => {
+              recipe.recipeDetails = recipeDetails;
+            });
+        });
+        // Wait for all recipe detail promises to resolve before continuing
+        return Promise.all(recipePromises);
+      })
+      .then(() => {
+        // Render the recipes after all recipe details have been fetched
+        this.render(this.recipes);
       });
   }
 
@@ -189,9 +201,7 @@ class RecipeManager {
               }
             });
             
-
-
-            // Appent the recipeElement to the container including all recipe cards
+            // Append the recipeElement to the container including all recipe cards
             this.container.appendChild(recipeCard);
           });
   }
@@ -260,16 +270,21 @@ class RecipeManager {
     return labelContainer;
   }
 
+  // Function to filter recipes
   filterItems() {
-
+    this.fetchRecipes();
   }
-  
 
 }
 
 manageRecipes = new RecipeManager();
-manageRecipes.fetchRecipes();
-manageRecipes.render(manageRecipes.recipes);
+
+const filterButton = document.getElementById('filter-button');
+filterButton.addEventListener('click', () => {
+  manageRecipes.container.innerHTML = '';
+  manageRecipes.fetchRecipes();
+  manageRecipes.render(manageRecipes.recipes);
+})
 
 ///////////CLIPBOARD CODE/////////////////
 function copyToClipboard() {
@@ -297,4 +312,3 @@ function copyToClipboard() {
 
 const copyButton = document.getElementById("copy-button");
 copyButton.addEventListener("click", copyToClipboard);
-
