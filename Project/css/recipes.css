@@ -125,6 +125,18 @@
   }
 
 /* RECIPE CONTAINER AND CARD STYLES */
+.hidden-section {
+  display: none;
+  opacity: 1;
+  transform: translateY(100%);
+  transition: all 1s;
+}
+
+.shown-section {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .recipes-content {
   display: flex;
   align-items: flex-start;
