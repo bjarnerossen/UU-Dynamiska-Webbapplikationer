@@ -136,23 +136,21 @@
           <!--RECIPES ARE GENERATED IN THIS SECTION-->
         </section>
         <!--CLIPBOARD IS DISPLAYED IN THIS SECTION-->
-        <div>
-          <h2>Ta-da! 🎉</h2>
-          <!-- <p>
-            <i class="fa-solid fa-quote-left"></i>
-            Your personalized grocery list is ready to help you conquer the
-            kitchen. Say goodbye to last-minute supermarket scrambles!
-            <i class="fa-solid fa-quote-right"></i>
-          </p> -->
-          <hr />
+        <div class="hidden-section">
+          <div>
+            <h2>Ta-da! 🎉</h2>
+            <hr />
+          </div>
+          <section class="clipboard-container">
+            <textarea
+              id="clipboard"
+              placeholder="Your grocery list will be displayed here..."
+            ></textarea>
+            <button id="copy-button">
+              Copy<i class="bi bi-clipboard"></i>
+            </button>
+          </section>
         </div>
-        <section class="clipboard-container">
-          <textarea
-            id="clipboard"
-            placeholder="Your grocery list will be displayed here..."
-          ></textarea>
-          <button id="copy-button">Copy<i class="bi bi-clipboard"></i></button>
-        </section>
       </article>
     </main>
     <footer class="footer hidden">
