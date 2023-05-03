@@ -8,7 +8,9 @@ class RecipeManager {
 
   fetchRecipes() {
     // Setting number of recipes to 3 for the sake of the API-plan
-    const NUM_RECIPES = 3;
+    const NUM_RECIPES = 2;
+
+    const randomNum = Math.floor(Math.random() * 1000);
 
     // getting values from the checkbox form
     const filterParams = Object.entries({
@@ -24,11 +26,13 @@ class RecipeManager {
       .map(([key, _]) => key)
       .join("&");
 
-    const url = `${this.API_ENDPOINT}complexSearch?type=lunch&${filterParams}&apiKey=${this.API_KEY}&number=${NUM_RECIPES}`;
+    const url = `${this.API_ENDPOINT}complexSearch?&type=lunch&${filterParams}&apiKey=${this.API_KEY}&number=${NUM_RECIPES}&random=${randomNum}`;
 
     fetch(url)
       .then(response => response.json())
       .then(data => {
+        this.recipes.splice(0, this.recipes.length); // Clear the recipes array
+        this.recipes.push(...data.results); // Add the new recipes data to the array
         this.recipes = data.results;
         // Create an array to store promises that will fetch recipe details for each recipe
         const recipePromises = this.recipes.map(recipe => {
@@ -190,7 +194,7 @@ class RecipeManager {
                 clipboard.value = updatedClipboard;
               } else {
                 // If button does not have 'remove-button' class, append recipe title and ingredients to clipboard
-                clipboard.value += '\n' + recipeDetails.title + '\n' + ingredientsList;
+                clipboard.value += '\n\n' + recipeDetails.title + '\n' + ingredientsList;
               }
             
               addButton.classList.toggle('remove-button'); // Toggle the class "remove-button"

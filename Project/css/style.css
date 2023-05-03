@@ -127,6 +127,12 @@ article > section {
   margin: 0;
 }
 
+article > section > p > a {
+  text-transform: none;
+  text-decoration: underline solid 2px var(--accent-color-2);
+  font-weight: 700;
+}
+
 section {
   display: grid;
   align-items: center;
