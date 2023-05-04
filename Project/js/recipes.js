@@ -184,9 +184,12 @@ class RecipeManager {
 
             // Add ingredients to clipboard on click of add-button
             addButton.addEventListener('click', () => {
-              const clipboard = document.getElementById('clipboard');
+              const clipboardSection = document.querySelector('.clipboard-section');
               const ingredientsList = recipeDetails.extendedIngredients.map(ingredient => `${ingredient.name} ${Math.round(ingredient.measures.metric.amount)} ${ingredient.measures.metric.unitShort}`).join('\n');
               
+              // Show the clipbboard section once the groceries have been added
+              clipboardSection.classList.remove('hidden-section');
+
               if (addButton.classList.contains('remove-button')) {
                 // If button has 'remove-button' class, remove ingredients from clipboard
                 const clipboardLines = clipboard.value.split('\n');
@@ -202,6 +205,10 @@ class RecipeManager {
                 addButton.textContent = 'Remove from grocery list'; // Update text content when ingredients are shown
               } else {
                 addButton.textContent = 'Add to grocery list'; // Update text content when ingredients are hidden
+              }
+
+              if (document.querySelectorAll('.remove-button').length === 0 && !clipboardSection.classList.contains('hidden-section')) {
+                clipboardSection.classList.add('hidden-section');
               }
             });
             
@@ -285,7 +292,13 @@ manageRecipes = new RecipeManager();
 
 const filterButton = document.getElementById('filter-button');
 filterButton.addEventListener('click', () => {
-  manageRecipes.container.innerHTML = '';
+  // Making the recipeSection visible on click
+  const recipeSection = document.querySelector('.recipes-section');
+  recipeSection.classList.remove('hidden-section');
+  
+  // // Clearing the recipes
+  // recipeSection.innerHTML = '';
+  
   manageRecipes.fetchRecipes();
   manageRecipes.render(manageRecipes.recipes);
 })
