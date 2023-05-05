@@ -1,0 +1,90 @@
+:root {
+  /* Accent colors */
+  --accent-color-1: #90ee90;
+  --accent-color-2: #c7f9cc; 
+
+  /* Background colors */
+  --background-color: #242423; 
+  --background-color-alt: #ffffff; 
+
+  /* Text colors */
+  --text-color: #FFFFFF;
+  --text-color-alt: #242423; 
+}
+
+/* EXTRA STYLING FOR INDEX.HTML SECTION OTHER THAN DEFAULT*/
+.section-index {
+  display: grid;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  height: 100vh;
+}
+
+.section-index h2, p {
+    text-align: center;
+    margin-bottom: 3rem;
+    margin-right: 0; /* neutralise style.css */
+}
+
+.section-index h2 {
+  font-size: 3rem;
+}
+
+.section-index button {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+
+/* ADDITIONAL STYLING FOR THE INDEX H2*/
+.guru {text-decoration: var(--accent-color-2) wavy underline;}
+
+.guru:hover {cursor: pointer;}
+
+.headline-dot {
+    font-family: 'railway';
+    color: var(--accent-color-2);
+}
+
+/* STYLING FOR THE FLOATING EMOJI */
+.food-emoji {
+  text-align: center;
+  font-size: 100px;
+  animation: floating 3s ease-in-out infinite;
+  margin-left: 30px;
+  margin-top: 5px;
+  margin-bottom: 3rem;
+  color: #fff;
+  text-shadow: 
+    0 0 5px #fff, 
+    0 0 10px #fff, 
+    0 0 15px #fff, 
+    0 0 20px #b2ff00, 
+    0 0 35px var(--accent-color-1),
+    0 0 40px var(--accent-color-2), 
+    0 0 50px var(--accent-color-2);
+}
+
+@keyframes floating {
+  0% { transform: translate(0, 0px) scale(1); }
+  50% { transform: translate(0, 15px) scale(1.1); }
+  100% { transform: translate(0, 0px) scale(1); }
+}
+
+/* RESPONSIVE STYLING USING MEDIA QUERIES */ 
+
+/* Small screens (up to 599px) */
+@media screen and (max-width: 599px) {
+.section-index h2 {
+  font-size: 2rem;
+}
+
+}
+
+/* Medium screens (600px to 959px) */
+@media screen and (min-width: 600px) and (max-width: 959px) {
+.section-index h2 {
+  font-size: 2rem;
+}
+}

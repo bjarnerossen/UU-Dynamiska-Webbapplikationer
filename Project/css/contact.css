@@ -1,0 +1,65 @@
+:root {
+    /* Accent colors */
+    --accent-color-1: #90ee90;
+    --accent-color-2: #c7f9cc; 
+  
+    /* Background colors */
+    --background-color: #242423; 
+    --background-color-alt: #ffffff; 
+  
+    /* Text colors */
+    --text-color: #FFFFFF;
+    --text-color-alt: #242423; 
+  }
+
+form {
+    background-color: var(--accent-color-2);
+    color: var(--background-color);
+    font-weight: 600;
+    padding: 2rem;
+    border-radius: 20px;
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4rem;
+  }
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--background-color-alt);
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  textarea {
+    height: 150px;
+    resize: vertical;
+    font-weight: 100;
+  }
+  input[type="submit"] {
+    background-color: var(--background-color-alt);
+    color: var(--text-color-alt);
+    border: none;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 1.2rem;
+    padding: 0.8rem;
+    width: 200px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-radius 0.3s ease;
+  }
+  input[type="submit"]:hover {
+    color: var(--text-color-alt);
+    border-radius: 12px;
+  }
+  input[type="submit"]:focus {
+    outline: none;
+  }
