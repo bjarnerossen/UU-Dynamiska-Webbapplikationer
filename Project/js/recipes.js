@@ -40,6 +40,7 @@ class RecipeManager {
             .then(response => response.json())
             .then(recipeDetails => {
               recipe.recipeDetails = recipeDetails;
+              console.log(recipeDetails);
             });
         });
         // Wait for all recipe detail promises to resolve before continuing
