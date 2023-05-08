@@ -67,6 +67,7 @@ form {
   .issue-reporting {
     background-color: var(--background-color);
     color: var(--text-color);
+    border-radius: 20px;
     padding: 20px;
     margin: 20px 0;
   }

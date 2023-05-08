@@ -13,35 +13,24 @@ class RecipeManager {
     const randomNum = Math.floor(Math.random() * 1000);
 
     // getting values from the checkbox form
+    const checkboxes = [
+      { filter: 'vegetarian', param: '&diet=vegetarian' },
+      { filter: 'vegan', param: '&diet=vegan' },
+      { filter: 'glutenFree', param: '&diet=glutenFree' },
+      { filter: 'dairyFree', param: '&diet=dairyFree' },
+      { filter: 'veryHealthy', param: '&minHealth=50' },
+      { filter: 'cheap', param: '&maxPrice=5' },
+      { filter: 'veryPopular', param: '&sort=popularity' }
+    ];
+    
     var filterParams = "";
-    const vegetarianCheckbox = document.querySelector("input[data-filter='vegetarian']");
-    if (vegetarianCheckbox.checked) {
-      filterParams += "&diet=vegetarian";
-    }
-    const veganCheckbox = document.querySelector("input[data-filter='vegan']");
-    if (veganCheckbox.checked) {
-      filterParams += "&diet=vegan";
-    }
-    const glutenFreeCheckbox = document.querySelector("input[data-filter='glutenFree']");
-    if (glutenFreeCheckbox.checked) {
-      filterParams += "&diet=glutenFree";
-    }
-    const dairyFreeCheckbox = document.querySelector("input[data-filter='dairyFree']");
-    if (dairyFreeCheckbox.checked) {
-      filterParams += "&diet=dairyFree";
-    }
-    const veryHealthyCheckbox = document.querySelector("input[data-filter='veryHealthy']");
-    if (veryHealthyCheckbox.checked) {
-      filterParams += "&minHealth=50";
-    }
-    const cheapCheckbox = document.querySelector("input[data-filter='cheap']");
-    if (cheapCheckbox.checked) {
-      filterParams += "&maxPrice=5";
-    }
-    const veryPopularCheckbox = document.querySelector("input[data-filter='veryPopular']");
-    if (veryPopularCheckbox.checked) {
-      filterParams += "&sort=popularity";
-    }    
+    
+    checkboxes.forEach(function(checkbox) {
+      const checkboxElement = document.querySelector(`input[data-filter='${checkbox.filter}']`);
+      if (checkboxElement.checked) {
+        filterParams += checkbox.param;
+      }
+    });  
     
     const url = `${this.API_ENDPOINT}complexSearch?&type=lunch${filterParams}&apiKey=${this.API_KEY}&number=${NUM_RECIPES}&random=${randomNum}`;
     
