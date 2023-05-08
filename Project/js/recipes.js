@@ -33,7 +33,6 @@ class RecipeManager {
       .then(data => {
         this.recipes.splice(0, this.recipes.length); // Clear the recipes array
         this.recipes.push(...data.results); // Add the new recipes data to the array
-        this.recipes = data.results;
         // Create an array to store promises that will fetch recipe details for each recipe
         const recipePromises = this.recipes.map(recipe => {
           return fetch(`${this.API_ENDPOINT}${recipe.id}/information?includeNutrition=false&apiKey=${this.API_KEY}`)
@@ -46,10 +45,6 @@ class RecipeManager {
         // Wait for all recipe detail promises to resolve before continuing
         return Promise.all(recipePromises);
       })
-      .then(() => {
-        // Render the recipes after all recipe details have been fetched
-        this.render(this.recipes);
-      });
   }
 
   render(recipes) {
@@ -297,9 +292,8 @@ filterButton.addEventListener('click', () => {
   const recipeSection = document.querySelector('.recipes-section');
   recipeSection.classList.remove('hidden-section');
   
-  // // Clearing the recipes
-  // recipeSection.innerHTML = '';
-  
+  const recipesContent = document.getElementById('recipes-content');
+  recipesContent.innerHTML = '';
   manageRecipes.fetchRecipes();
   manageRecipes.render(manageRecipes.recipes);
 })
