@@ -13,21 +13,38 @@ class RecipeManager {
     const randomNum = Math.floor(Math.random() * 1000);
 
     // getting values from the checkbox form
-    const filterParams = Object.entries({
-      vegetarian: document.querySelector("input[data-filter='vegetarian']").checked,
-      vegan: document.querySelector("input[data-filter='vegan']").checked,
-      glutenFree: document.querySelector("input[data-filter='glutenFree']").checked,
-      dairyFree: document.querySelector("input[data-filter='dairyFree']").checked,
-      veryHealthy: document.querySelector("input[data-filter='veryHealthy']").checked,
-      cheap: document.querySelector("input[data-filter='cheap']").checked,
-      veryPopular: document.querySelector("input[data-filter='veryPopular']").checked,
-    })
-      .filter(([_, value]) => value)
-      .map(([key, _]) => key)
-      .join("&");
-
-    const url = `${this.API_ENDPOINT}complexSearch?&type=lunch&${filterParams}&apiKey=${this.API_KEY}&number=${NUM_RECIPES}&random=${randomNum}`;
-
+    var filterParams = "";
+    const vegetarianCheckbox = document.querySelector("input[data-filter='vegetarian']");
+    if (vegetarianCheckbox.checked) {
+      filterParams += "&diet=vegetarian";
+    }
+    const veganCheckbox = document.querySelector("input[data-filter='vegan']");
+    if (veganCheckbox.checked) {
+      filterParams += "&diet=vegan";
+    }
+    const glutenFreeCheckbox = document.querySelector("input[data-filter='glutenFree']");
+    if (glutenFreeCheckbox.checked) {
+      filterParams += "&diet=glutenFree";
+    }
+    const dairyFreeCheckbox = document.querySelector("input[data-filter='dairyFree']");
+    if (dairyFreeCheckbox.checked) {
+      filterParams += "&diet=dairyFree";
+    }
+    const veryHealthyCheckbox = document.querySelector("input[data-filter='veryHealthy']");
+    if (veryHealthyCheckbox.checked) {
+      filterParams += "&minHealth=50";
+    }
+    const cheapCheckbox = document.querySelector("input[data-filter='cheap']");
+    if (cheapCheckbox.checked) {
+      filterParams += "&maxPrice=5";
+    }
+    const veryPopularCheckbox = document.querySelector("input[data-filter='veryPopular']");
+    if (veryPopularCheckbox.checked) {
+      filterParams += "&sort=popularity";
+    }    
+    
+    const url = `${this.API_ENDPOINT}complexSearch?&type=lunch${filterParams}&apiKey=${this.API_KEY}&number=${NUM_RECIPES}&random=${randomNum}`;
+    
     fetch(url)
       .then(response => response.json())
       .then(data => {
@@ -39,7 +56,6 @@ class RecipeManager {
             .then(response => response.json())
             .then(recipeDetails => {
               recipe.recipeDetails = recipeDetails;
-              console.log(recipeDetails);
             });
         });
         // Wait for all recipe detail promises to resolve before continuing
