@@ -50,9 +50,18 @@ class RecipeManager {
         // Wait for all recipe detail promises to resolve before continuing
         return Promise.all(recipePromises);
       })
+      .then(() => {
+      // Call the render function with the recipes data after all promises are resolved
+      this.render(this.recipes);
+      })
   }
 
   render(recipes) {
+          if (!recipes || recipes.length === 0) {
+            console.warn('No recipes to render');
+            return;
+          }
+
           recipes.forEach(recipe => {
             const recipeDetails = recipe.recipeDetails;
             // Create a new div for the recipe
@@ -300,7 +309,6 @@ filterButton.addEventListener('click', () => {
   const recipesContent = document.getElementById('recipes-content');
   recipesContent.innerHTML = '';
   manageRecipes.fetchRecipes();
-  manageRecipes.render(manageRecipes.recipes);
 })
 
 ///////////CLIPBOARD CODE/////////////////
