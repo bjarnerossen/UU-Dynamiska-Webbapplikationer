@@ -37,17 +37,31 @@ class RecipeManager {
     this.container.innerHTML = '<lottie-player src="https://assets8.lottiefiles.com/packages/lf20_4L6JjAIiVL.json" mode="bounce" background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>';
 
     fetch(url)
-      .then(response => response.json())
+      .then(response => {
+                    // Error handling of response
+        if(response.ok) {
+          response.json();
+        }
+        // Throw an error with message when response wasn't successful
+        throw new Error('Response not ok');
+      })
       .then(data => {
         this.recipes.splice(0, this.recipes.length); // Clear the recipes array
         this.recipes.push(...data.results); // Add the new recipes data to the array
         // Create an array to store promises that will fetch recipe details for each recipe
         const recipePromises = this.recipes.map(recipe => {
           return fetch(`${this.API_ENDPOINT}${recipe.id}/information?includeNutrition=false&apiKey=${this.API_KEY}`)
-            .then(response => response.json())
-            .then(recipeDetails => {
-              recipe.recipeDetails = recipeDetails;
-            });
+          .then(response => {
+            // Error handling of response
+            if (response.ok) {
+              return response.json();
+            }
+            // Throw an error with message when response wasn't successful
+            throw new Error('Response not ok');
+          })
+          .then(recipeDetails => {
+            recipe.recipeDetails = recipeDetails;
+          });
         });
         // Wait for all recipe detail promises to resolve before continuing
        
