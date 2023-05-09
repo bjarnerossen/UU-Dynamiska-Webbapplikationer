@@ -38,7 +38,7 @@ class RecipeManager {
 
     fetch(url)
       .then(response => {
-                    // Error handling of response
+        // Error handling of response
         if(response.ok) {
           response.json();
         }
@@ -73,6 +73,11 @@ class RecipeManager {
       // Call the render function with the recipes data after all promises are resolved
       this.render(this.recipes);
       })
+      .catch(error => {
+        console.error(`Error fetching recipes: ${error}`);
+        // Remove the lottie-player from the container and display an error message
+        this.container.innerHTML = "An error occurred while fetching recipes. Please try again later.";
+      });
   }
 
   render(recipes) {
