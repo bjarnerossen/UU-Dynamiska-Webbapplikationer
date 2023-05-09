@@ -76,7 +76,7 @@ class RecipeManager {
       .catch(error => {
         console.error(`Error fetching recipes: ${error}`);
         // Remove the lottie-player from the container and display an error message
-        this.container.innerHTML = "An error occurred while fetching recipes. Please try again later.";
+        this.container.innerHTML = '<p>An error occurred while fetching recipes. Please try again later.</p><lottie-player src="https://assets1.lottiefiles.com/packages/lf20_KOXhzYGQfb.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>';
       });
   }
 
