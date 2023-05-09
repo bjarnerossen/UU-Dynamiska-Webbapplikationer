@@ -34,6 +34,8 @@ class RecipeManager {
     
     const url = `${this.API_ENDPOINT}complexSearch?&type=lunch${filterParams}&apiKey=${this.API_KEY}&number=${NUM_RECIPES}&random=${randomNum}`;
     
+    this.container.innerHTML = '<lottie-player src="https://assets8.lottiefiles.com/packages/lf20_4L6JjAIiVL.json" mode="bounce" background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>';
+
     fetch(url)
       .then(response => response.json())
       .then(data => {
@@ -48,9 +50,12 @@ class RecipeManager {
             });
         });
         // Wait for all recipe detail promises to resolve before continuing
+       
         return Promise.all(recipePromises);
       })
       .then(() => {
+      // Remove the lottie-player from the container
+      this.container.innerHTML = "";
       // Call the render function with the recipes data after all promises are resolved
       this.render(this.recipes);
       })
