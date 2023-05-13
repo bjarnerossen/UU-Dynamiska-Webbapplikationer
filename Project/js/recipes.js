@@ -40,7 +40,7 @@ class RecipeManager {
       .then(response => {
         // Error handling of response
         if(response.ok) {
-          response.json();
+          return response.json();
         }
         // Throw an error with message when response wasn't successful
         throw new Error('Response not ok');
