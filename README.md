@@ -27,7 +27,7 @@ Each week contains a directory that includes the source code and relevant files 
 | **[Lab 2](https://github.com/bjarnerossen/UU-Dynamiska-Webbapplikationer/blob/main/Lab2/stil/style.css)**   | `CSS`                            |   5-7 | ✅|
 | **[Lab 3](https://github.com/bjarnerossen/UU-Dynamiska-Webbapplikationer/tree/main/Lab3/Stryktipset/assets/js)**   | `Javascript`                     |  8-13 | ✅ |
 | **Lab 4**   | `W3 Standards` & `Accessability` | 14-15 | ✅ |
-| **Project** | `Building a Website`      | 16-20 |
+| **Project** | `Building a Website`      | 16-20 | ✅ |
 
 ---
 > **DISCLAIMER:** *The code provided in this repository is for educational purposes only. It is intended to demonstrate various concepts and techniques related to programming and software development. The code is not intended to be used as a reference for academic work or submissions.*
