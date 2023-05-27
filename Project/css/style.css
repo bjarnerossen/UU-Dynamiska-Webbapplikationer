@@ -204,6 +204,18 @@ hr {
   background-color: var(--accent-color-2);
 }
 
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
 /* Small screens (up to 599px) */
 @media screen and (max-width: 599px) {
   article {
@@ -226,6 +238,10 @@ hr {
   
   p {
     font-size: 1.2rem;
+  }
+
+  table {
+    font-size: 12px;
   }
 
 }
